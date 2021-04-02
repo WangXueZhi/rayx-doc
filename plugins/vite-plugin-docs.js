@@ -3,6 +3,7 @@ const path = require('path')
 const marked = require('marked')
 
 const getDocsDatas = function (path, cb) {
+  console.log('>>>>>>>>>>> getDocsDatas <<<<<<<<<<<<<<<')
   const files = fs.readdirSync(path)
   const mdDatas = []
   for (let i = 0; i < files.length; i++) {
@@ -52,8 +53,8 @@ const getDocsDatas = function (path, cb) {
 }
 
 export default function (options) {
-  const virtualFileId = options.importName || '@docs-data';
-  const DOCS_PATH = options.path || './docs';
+  const virtualFileId = (options && options.importName) || '@docs-data';
+  const DOCS_PATH = (options && options.path) || './docs';
 
   if (!fs.existsSync(DOCS_PATH)) {
     throw new Error(`路径不存在 => ${DOCS_PATH}`)
@@ -68,6 +69,7 @@ export default function (options) {
       }
     },
     load(id) {
+      // console.log('>>>>>>>>>>> load <<<<<<<<<<<<<<<', id)
       if (id === virtualFileId) {
         // 返回加载模块代码
         const mdDatas = getDocsDatas(DOCS_PATH)
