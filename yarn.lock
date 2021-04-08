@@ -594,6 +594,13 @@ util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   resolved "http://172.16.104.140:4873/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
 
+vite-plugin-md2vue@^0.0.1:
+  version "0.0.1"
+  resolved "http://172.16.104.140:4873/vite-plugin-md2vue/-/vite-plugin-md2vue-0.0.1.tgz#3d0d82aaa025a3b056da476c9c97b547cb11b5a7"
+  integrity sha1-PQ2CqqAlo7BW2kdsnJe1R8sRtac=
+  dependencies:
+    marked "^2.0.1"
+
 vite@^2.1.0:
   version "2.1.2"
   resolved "http://172.16.104.140:4873/vite/-/vite-2.1.2.tgz#0aecaf6d34112b24536df1a14cd8d74fdcab6e20"
