@@ -15,12 +15,8 @@ import createRouter from "./router"
 // router
 const modules = import.meta.glob("../docs/**/*.md");
 
-const {Router, routes, menus} = createRouter(modules)
+const {Router, routes, menu} = createRouter(modules)
 console.log(routes)
-
-for (let i = 0; i < routes.length; i++) {
-  const route = routes[i];
-}
 
 // store
 interface State {
@@ -30,7 +26,7 @@ interface State {
 const store = createStore<State>({
   state () {
     return {
-      menu: menus
+      menu: menu
     }
   },
   mutations: {
