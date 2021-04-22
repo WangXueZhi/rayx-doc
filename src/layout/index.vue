@@ -10,15 +10,6 @@ import Content from './Content.vue'
 export default defineComponent({
   name: 'Layout',
   components: {Menu, Content},
-  props: {
-    msg: {
-      type: String,
-      required: true
-    }
-  },
-  setup: () => {
-    
-  }
 })
 </script>
 

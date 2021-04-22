@@ -18,7 +18,6 @@ export default defineComponent({
   //   })
   // },
   mounted(){
-    console.log(this.$store.state.menu)
   }
 })
 </script>

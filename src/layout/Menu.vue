@@ -35,10 +35,6 @@ import ScrollBar from '@components/scroll-bar/scroll-bar.vue'
 export default defineComponent({
   name: 'layout-menu',
   props: {
-    msg: {
-      type: String,
-      required: true,
-    },
   },
   components: { ScrollBar },
   setup: () => {
