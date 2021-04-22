@@ -9,6 +9,8 @@ export default defineConfig({
   resolve: {
     alias: {
       docs: resolve("./docs"),
+      '@src': resolve("./src"),
+      '@components': resolve("./src/components")
     },
   },
   server: {

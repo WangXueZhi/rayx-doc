@@ -1,4 +1,5 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
+import { Menu } from "@src/types"
 
 type Modules = Record<
   string,
@@ -6,12 +7,6 @@ type Modules = Record<
     [key: string]: any;
   }>
 >;
-
-type Menu = {
-  title: string,
-  path?: string,
-  children?: Menu[]
-}
 
 function fixRouterPath(path: string, shouldEncode: boolean = true) {
   const pathArr = path
@@ -44,7 +39,7 @@ function createMenu(path: string) {
   pathSplitArr.splice(
     pathSplitArr.length - 1,
     1,
-    pathSplitArr[pathSplitArr.length - 1].split(".")[0]
+    pathSplitArr[pathSplitArr.length - 1].split(".").slice(0, -1).join('.')
   );
   for (let i = 0; i < pathSplitArr.length; i++) {
     const title = pathSplitArr[i];
@@ -59,7 +54,7 @@ function createMenu(path: string) {
         currentMenu = newItem.children;
       }
       if (i === pathSplitArr.length - 1) {
-        newItem.path = path
+        newItem.path = fixRouterPath(path)
       }
       continue
     }

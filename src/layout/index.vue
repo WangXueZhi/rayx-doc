@@ -5,10 +5,10 @@
 
 <script lang="ts">
 import { ref, defineComponent } from 'vue'
-import Menu from './Menu'
-import Content from './Content'
+import Menu from './Menu.vue'
+import Content from './Content.vue'
 export default defineComponent({
-  name: 'HelloWorld',
+  name: 'Layout',
   components: {Menu, Content},
   props: {
     msg: {

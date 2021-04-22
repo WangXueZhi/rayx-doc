@@ -1,17 +1,16 @@
 <template>
-  <router-view></router-view>
-  <img alt="Vue logo" src="./assets/logo.png" />
+  <Layout />
   <!-- <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" /> -->
 </template>
 
 <script lang="ts">
 import { defineComponent, onMounted } from 'vue'
-// import HelloWorld from './components/HelloWorld.vue'
+import Layout from './layout/index.vue'
 
 export default defineComponent({
   name: 'App',
   components: {
-    // HelloWorld
+    Layout
   },
   // setup(){
   //   onMounted(()=>{
@@ -19,18 +18,19 @@ export default defineComponent({
   //   })
   // },
   mounted(){
-    console.log(this.$store.state)
+    console.log(this.$store.state.menu)
   }
 })
 </script>
 
 <style>
+body{
+  margin: 0;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

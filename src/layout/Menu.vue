@@ -1,38 +1,113 @@
 <template>
-  <div></div>
+  <ScrollBar class="layout-menu">
+    <div class="layout-menu-item" v-for="item in menu" :key="item.path">
+      <div
+        class="layout-menu-item-name"
+        :class="{
+          'layout-menu-item-hasChildren':
+            item.children && item.children.length > 0,
+        }"
+        @click="itemClick(item)"
+      >
+        {{ item.title }}
+      </div>
+      <div class="layout-menu-item-subChildren">
+        <div
+          class="layout-menu-item-sub"
+          v-for="subitem in item.children"
+          :key="subitem.path"
+          @click="itemClick(subitem)"
+        >
+          {{ subitem.title }}
+        </div>
+      </div>
+    </div>
+  </ScrollBar>
 </template>
 
 <script lang="ts">
-import { ref, defineComponent } from 'vue'
+import { ref, defineComponent, computed } from 'vue'
+import { useStore } from 'vuex'
+import { useRouter, useRoute } from 'vue-router'
+import { Menu } from '@src/types'
+import ScrollBar from '@components/scroll-bar/scroll-bar.vue'
+
 export default defineComponent({
-  name: 'HelloWorld',
+  name: 'layout-menu',
   props: {
     msg: {
       type: String,
-      required: true
+      required: true,
+    },
+  },
+  components: { ScrollBar },
+  setup: () => {
+    const store = useStore()
+    const router = useRouter()
+    const route = useRoute()
+
+    return {
+      menu: computed(() => store.state.menu),
+      itemClick: (data: Menu) => {
+        if (data.children && data.children.length > 0) {
+          return
+        }
+        if (data.path) {
+          router.push(data.path)
+        }
+      },
     }
   },
-  setup: () => {
-    const count = ref(0)
-    return { count }
-  }
 })
 </script>
 
-<style scoped>
-a {
-  color: #42b983;
-}
+<style scoped lang="scss">
+.layout-menu {
+  width: 13%;
+  position: fixed !important;
+  top: 0;
+  bottom: 0;
+  border-right: 1px solid #f0f0f0;
+  background-color: #fff;
+  padding: 10px 0;
+  .layout-menu-item {
+    padding: 5px 26px;
+    position: relative;
+    z-index: 1;
 
-label {
-  margin: 0 0.5em;
-  font-weight: bold;
-}
+    .layout-menu-item-name {
+      transition: all 0.2s ease-in-out;
+      font-size: 18px;
+      cursor: pointer;
 
-code {
-  background-color: #eee;
-  padding: 2px 4px;
-  border-radius: 4px;
-  color: #304455;
+      &:hover {
+        color: #1890ff;
+      }
+
+      &.layout-menu-item-active {
+        color: #1890ff !important;
+        background-color: #e6f7ff;
+        border-right: 1px solid #1890ff;
+      }
+
+      &.layout-menu-item-hasChildren {
+        border-bottom: 1px solid #f0f0f0;
+        padding-bottom: 5px;
+      }
+    }
+
+    .layout-menu-item-subChildren {
+      padding: 5px 0;
+      .layout-menu-item-sub {
+        transition: all 0.2s ease-in-out;
+        font-size: 14px;
+        cursor: pointer;
+        padding: 5px 0;
+        &:hover {
+          color: #1890ff;
+        }
+      }
+    }
+  }
 }
 </style>
