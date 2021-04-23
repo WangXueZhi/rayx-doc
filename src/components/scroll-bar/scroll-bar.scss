@@ -48,15 +48,15 @@
         }
     }
 
-    &:hover {
-        &.r-scrollbar-needShowBar {
-            .r-scrollbar__bar {
-                opacity: 1;
+    // &:hover {
+    //     &.r-scrollbar-needShowBar {
+    //         .r-scrollbar__bar {
+    //             opacity: 1;
 
-                .r-scrollbar__thumb {
-                    background-color: rgba(144, 147, 153, .5);
-                }
-            }
-        }
-    }
+    //             .r-scrollbar__thumb {
+    //                 background-color: rgba(144, 147, 153, .5);
+    //             }
+    //         }
+    //     }
+    // }
 }

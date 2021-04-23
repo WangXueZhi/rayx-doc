@@ -33,7 +33,8 @@ function findMenuItem(menu: Menu[], title: string) {
   return null;
 }
 
-function createMenu(path: string) {
+// 创建菜单，返回当前菜单路径数组
+function createMenu(path: string): String[] {
   // 分割路径层级
   const pathSplitArr = path.replace("/docs/", "").split("/");
   pathSplitArr.splice(
@@ -66,22 +67,21 @@ function createMenu(path: string) {
     }
   }
   currentMenu = menu;
+  return pathSplitArr
 }
 
 export default function (modules: Modules, otherRouts?: RouteRecordRaw[]) {
   let routes: RouteRecordRaw[] = [];
 
   for (const path in modules) {
-    const pathSplitArr = path.split("/");
+    const menuPathArr = createMenu(fixRouterPath(path, false));
     routes.push({
       path: fixRouterPath(path) + "/:position?",
       component: modules[path],
       meta: {
-        title: pathSplitArr[pathSplitArr.length - 1].split(".")[0],
+        menuPath: menuPathArr.length > 0 ? menuPathArr.join(',') : menuPathArr[0],
       },
     });
-
-    createMenu(fixRouterPath(path, false));
 
     if (otherRouts && Array.isArray(otherRouts) && otherRouts.length > 0) {
       routes = [...routes, ...otherRouts];

@@ -1,3 +1,9 @@
+# 贵仁开发文档
+
+## 添加文档
+
+docs目录中添加md文档即可，目前只支持最多2级目录
+
 # Vue 3 + Typescript + Vite
 
 This template should help get you started developing with Vue 3 and Typescript in Vite.

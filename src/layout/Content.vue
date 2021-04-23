@@ -8,6 +8,9 @@
 import { ref, defineComponent } from 'vue'
 export default defineComponent({
   name: 'layout-content',
+  mounted(){
+    // console.log('mounted', this.$route)
+  },
 })
 </script>
 

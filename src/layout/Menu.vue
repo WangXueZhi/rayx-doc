@@ -6,6 +6,11 @@
         :class="{
           'layout-menu-item-hasChildren':
             item.children && item.children.length > 0,
+          'layout-menu-item-noChildren': !(
+            item.children && item.children.length > 0
+          ),
+          'layout-menu-item-active':
+              item.title === activeDocPath
         }"
         @click="itemClick(item)"
       >
@@ -14,6 +19,10 @@
       <div class="layout-menu-item-subChildren">
         <div
           class="layout-menu-item-sub"
+          :class="{
+            'layout-menu-item-active':
+              `${item.title},${subitem.title}` === activeDocPath,
+          }"
           v-for="subitem in item.children"
           :key="subitem.path"
           @click="itemClick(subitem)"
@@ -26,24 +35,25 @@
 </template>
 
 <script lang="ts">
-import { ref, defineComponent, computed } from 'vue'
+import { defineComponent, computed } from 'vue'
 import { useStore } from 'vuex'
-import { useRouter, useRoute } from 'vue-router'
+import {
+  useRouter,
+} from 'vue-router'
 import { Menu } from '@src/types'
 import ScrollBar from '@components/scroll-bar/scroll-bar.vue'
 
 export default defineComponent({
   name: 'layout-menu',
-  props: {
-  },
+  props: {},
   components: { ScrollBar },
   setup: () => {
     const store = useStore()
     const router = useRouter()
-    const route = useRoute()
 
     return {
       menu: computed(() => store.state.menu),
+      activeDocPath: computed(() => store.state.activeDocPath),
       itemClick: (data: Menu) => {
         if (data.children && data.children.length > 0) {
           return
@@ -58,10 +68,11 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
+
 .layout-menu {
   width: 13%;
   position: fixed !important;
-  top: 0;
+  top: 50px;
   bottom: 0;
   border-right: 1px solid #f0f0f0;
   background-color: #fff;
@@ -74,21 +85,23 @@ export default defineComponent({
     .layout-menu-item-name {
       transition: all 0.2s ease-in-out;
       font-size: 18px;
-      cursor: pointer;
-
-      &:hover {
-        color: #1890ff;
-      }
 
       &.layout-menu-item-active {
         color: #1890ff !important;
-        background-color: #e6f7ff;
-        border-right: 1px solid #1890ff;
+        // background-color: #e6f7ff;
+        // border-right: 1px solid #1890ff;
       }
 
       &.layout-menu-item-hasChildren {
         border-bottom: 1px solid #f0f0f0;
         padding-bottom: 5px;
+      }
+
+      &.layout-menu-item-noChildren {
+        cursor: pointer;
+        &:hover {
+          color: #1890ff;
+        }
       }
     }
 
@@ -101,6 +114,11 @@ export default defineComponent({
         padding: 5px 0;
         &:hover {
           color: #1890ff;
+        }
+        &.layout-menu-item-active {
+          color: #1890ff !important;
+          // background-color: #e6f7ff;
+          // border-right: 1px solid #1890ff;
         }
       }
     }

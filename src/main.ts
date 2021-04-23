@@ -3,8 +3,8 @@ import App from "./App.vue";
 // import { createRouter, createWebHashHistory } from "vue-router";
 import { createStore, Store } from 'vuex'
 import Markdown from "./components/Markdown.vue";
-
 import createRouter from "./router"
+import "highlight.js/styles/color-brewer.css";
 // import AAA from "docs/开始.md";
 // import BBB from "docs/javascript/闭包.md";
 
@@ -16,22 +16,31 @@ import createRouter from "./router"
 const modules = import.meta.glob("../docs/**/*.md");
 
 const {Router, routes, menu} = createRouter(modules)
-console.log(routes)
+console.log(Router)
+
+Router.beforeEach((to, from, next) => {
+  /* 路由发生变化修改页面title */
+  console.log(to.meta.menuPath)
+  store.commit('setActiveDocPath', to.meta.menuPath)
+  next()
+})
 
 // store
 interface State {
-  menu: Object[]
+  menu: Object[],
+  activeDocPath: String
 }
 
 const store = createStore<State>({
   state () {
     return {
-      menu: menu
+      menu: menu,
+      activeDocPath: []
     }
   },
   mutations: {
-    increment (state) {
-      
+    setActiveDocPath (state, value) {
+      state.activeDocPath = value
     }
   }
 })
