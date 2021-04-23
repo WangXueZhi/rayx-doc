@@ -35,7 +35,7 @@ const store = createStore<State>({
   state () {
     return {
       menu: menu,
-      activeDocPath: []
+      activeDocPath: ''
     }
   },
   mutations: {
