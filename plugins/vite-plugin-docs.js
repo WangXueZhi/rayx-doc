@@ -1,9 +1,7 @@
 const fs = require('fs')
 const path = require('path')
-const marked = require('marked')
 
 const getDocsDatas = function (path, cb) {
-  console.log('>>>>>>>>>>> getDocsDatas <<<<<<<<<<<<<<<')
   const files = fs.readdirSync(path)
   const mdDatas = []
   for (let i = 0; i < files.length; i++) {
@@ -15,15 +13,7 @@ const getDocsDatas = function (path, cb) {
       cbObj = {
         name: files[i]
       }
-      if (cb) {
-        cbObj = {
-          ...cbObj,
-          ...cb(true, {
-            name: fileNameArr[0],
-            ext: fileNameArr[1]
-          })
-        }
-      }
+
       // 继续递归
       mdDatas.push({
         ...cbObj,
@@ -35,18 +25,10 @@ const getDocsDatas = function (path, cb) {
     cbObj = {
       name: fileNameArr[1]
     }
-    if (cb) {
-      cbObj = {
-        ...cbObj,
-        ...cb(false, {
-          name: fileNameArr[0],
-          ext: fileNameArr[1]
-        })
-      }
-    }
+
     mdDatas.push({
       ...cbObj,
-      content: marked(fs.readFileSync(`${path}/${files[i]}`, 'utf-8'))
+      content: fs.readFileSync(`${path}/${files[i]}`, 'utf-8')
     })
   }
   return mdDatas;

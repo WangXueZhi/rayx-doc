@@ -34,7 +34,7 @@ export default function (options) {
   
   marked.setOptions({
     highlight: function (code) {
-      console.log(code)
+      // console.log(code)
       return `<div class="md-code-hijs">${hljs.highlightAuto(code).value}</div>`;
     }
   });
