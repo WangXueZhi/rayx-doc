@@ -6,29 +6,43 @@ const getDocsDatas = function (path, cb) {
   const mdDatas = []
   for (let i = 0; i < files.length; i++) {
     const stats = fs.statSync(`${path}/${files[i]}`)
-    const fileNameArr = files[i].split('.')
     let cbObj
-
     if (stats.isDirectory()) {
       cbObj = {
         name: files[i]
       }
-
+      if (cb) {
+        cbObj = {
+          ...cbObj,
+          ...cb(true, {
+            name: files[i]
+          })
+        }
+      }
       // 继续递归
       mdDatas.push({
         ...cbObj,
-        childrens: getDocsDatas(`${path}/${files[i]}`)
+        childrens: getDocsDatas(`${path}/${files[i]}`, cb)
       })
       continue;
     }
-
+    const fileNameArr = files[i].split('.')
+    const fileName = fileNameArr.slice(0, -1).join('.')
     cbObj = {
-      name: fileNameArr[1]
+      name: fileName
     }
-
+    if (cb) {
+      cbObj = {
+        ...cbObj,
+        ...cb(false, {
+          name: fileName,
+          ext: fileNameArr.slice(-1)
+        })
+      }
+    }
     mdDatas.push({
       ...cbObj,
-      content: fs.readFileSync(`${path}/${files[i]}`, 'utf-8')
+      content: marked(fs.readFileSync(`${path}/${files[i]}`, 'utf-8'))
     })
   }
   return mdDatas;
