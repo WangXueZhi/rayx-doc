@@ -17,6 +17,8 @@ export default defineComponent({
 <style scoped lang="scss">
 .layout-content {
     margin: 0 13%;
-    padding: 26px;
+    padding: 0px 26px;
+    margin-top: 50px;
+    padding-top: 1px;
 }
 </style>

@@ -72,7 +72,7 @@ export default defineComponent({
 .layout-menu {
   width: 13%;
   position: fixed !important;
-  top: 50px;
+  top: 3.6rem;
   bottom: 0;
   border-right: 1px solid #f0f0f0;
   background-color: #fff;
