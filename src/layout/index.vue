@@ -1,5 +1,5 @@
 <template>
-  <div class="project-name">贵仁开发文档</div>
+  <div class="project-name">文档</div>
   <Menu />
   <Content />
 </template>

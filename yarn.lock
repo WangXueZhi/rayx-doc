@@ -445,6 +445,11 @@ marked@^2.0.1:
   resolved "http://172.16.104.140:4873/marked/-/marked-2.0.1.tgz#5e7ed7009bfa5c95182e4eb696f85e948cefcee3"
   integrity sha1-Xn7XAJv6XJUYLk62lvhelIzvzuM=
 
+marked@^2.0.3:
+  version "2.0.3"
+  resolved "http://172.16.104.140:4873/marked/-/marked-2.0.3.tgz#3551c4958c4da36897bda2a16812ef1399c8d6b0"
+  integrity sha1-NVHElYxNo2iXvaKhaBLvE5nI1rA=
+
 merge-source-map@^1.1.0:
   version "1.1.0"
   resolved "http://172.16.104.140:4873/merge-source-map/-/merge-source-map-1.1.0.tgz#2fdde7e6020939f70906a68f2d7ae685e4c8c646"
