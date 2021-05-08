@@ -7,6 +7,11 @@ import "highlight.js/styles/color-brewer.css";
 import docs from "@docs-data"
 console.log(docs)
 
+import RayxUi from "rayx-ui/packages";
+import "rayx-ui/lib/index";
+
+import './style.scss'
+
 // router
 const modules = import.meta.glob("../docs/**/*.md");
 
@@ -41,6 +46,7 @@ const store = createStore<State>({
 })
 
 const app = createApp(App);
+app.use(RayxUi);
 app.use(Router);
 app.use(store)
 app.mount("#app");

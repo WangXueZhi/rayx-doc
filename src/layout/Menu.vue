@@ -1,5 +1,5 @@
 <template>
-  <ScrollBar class="layout-menu">
+  <r-scroll-bar class="layout-menu">
     <div class="layout-menu-item" v-for="item in menu" :key="item.path">
       <div
         class="layout-menu-item-name"
@@ -31,7 +31,7 @@
         </div>
       </div>
     </div>
-  </ScrollBar>
+  </r-scroll-bar>
 </template>
 
 <script lang="ts">
