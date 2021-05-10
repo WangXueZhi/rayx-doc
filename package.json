@@ -9,7 +9,8 @@
   "dependencies": {
     "highlight.js": "^10.7.2",
     "marked": "^2.0.3",
-    "rayx-ui": "^0.0.1",
+    "rayx-ui": "^0.0.2",
+    "mermaid": "^8.9.3",
     "vue": "^3.0.5",
     "vue-router": "^4.0.5",
     "vuex": "^4.0.0"
