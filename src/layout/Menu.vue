@@ -41,12 +41,10 @@ import {
   useRouter,
 } from 'vue-router'
 import { Menu } from '@src/types'
-import ScrollBar from '@components/scroll-bar/scroll-bar.vue'
 
 export default defineComponent({
   name: 'layout-menu',
   props: {},
-  components: { ScrollBar },
   setup: () => {
     const store = useStore()
     const router = useRouter()

@@ -1,6 +1,6 @@
 <template>
   <div class="layout-head">
-    <div class="project-name">XXX文档</div>
+    <div class="project-name">Rayx - 适合团队使用的轻量文档系统</div>
     <div class="head-right">
       <div class="head-right-search">
         <r-icon name="iconicon-test7" class="demo-icon" />

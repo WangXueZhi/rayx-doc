@@ -7,8 +7,8 @@ import "highlight.js/styles/color-brewer.css";
 import docs from "@docs-data"
 console.log(docs)
 
-import RayxUi from "rayx-ui/packages";
-import "rayx-ui/lib/index";
+import RayxUi from "./components/rayx-ui";
+import "./components/rayx-ui/index.scss";
 
 import './style.scss'
 
@@ -16,7 +16,7 @@ import './style.scss'
 const modules = import.meta.glob("../docs/**/*.md");
 
 const {Router, routes, menu} = createRouter(modules)
-console.log(Router)
+console.log(routes)
 
 Router.beforeEach((to, from, next) => {
   /* 路由发生变化修改页面title */
