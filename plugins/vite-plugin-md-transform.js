@@ -1,7 +1,7 @@
-const marked = require('marked')
+const marked = require("marked");
 const hljs = require("highlight.js");
 
-export default function (options) {
+export default function vitePluginMd2Vue(options) {
   const classArray = ["md2vue-wrapper"];
   if (options && options.renderWrapperClass) {
     if (typeof options.renderWrapperClass === "string") {
@@ -15,39 +15,62 @@ export default function (options) {
   const defaultRenderer = {};
 
   marked.use({
-    renderer: options && options.markedRender ? {...defaultRenderer, ...options.markedRender } : defaultRenderer,
+    renderer:
+      options && options.markedRender
+        ? { ...defaultRenderer, ...options.markedRender }
+        : defaultRenderer,
   });
 
   const defaultMarkedOptions = {
-    highlight: function (code, lang) {      
-      if(lang === 'mermaid'){
-        return `<div class='mermaid'>${code}</div>`
+    highlight: function (code, lang) {
+      if (lang === "mermaid") {
+        return `<div class='mermaidWrapper' style="position: relative">
+        ${options && options.mermaidLoadingHtml ? options.mermaidLoadingHtml : '<div class="mermaid-loading" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); color: rgba(0, 0, 0, 0.54)">loading...</div>'}
+          <div class='mermaid' style="opacity: 0">${code}</div>
+        </div>`;
       }
-      return `<div class="md-code-hijs">${hljs.highlightAuto(code).value}</div>`;
-    }
-  }
-  
-  marked.setOptions(options && options.markedOptions ? {...defaultMarkedOptions, ...options.markedOptions} : defaultMarkedOptions);
+      return `<div class="md-code-hijs">${
+        hljs.highlightAuto(code).value
+      }</div>`;
+    },
+  };
+
+  marked.setOptions(
+    options && options.markedOptions
+      ? { ...defaultMarkedOptions, ...options.markedOptions }
+      : defaultMarkedOptions
+  );
 
   return {
-    name: 'vitePluginMdTransform',
+    name: "vitePluginMd2Vue",
     transform(src, id) {
       if (id.endsWith(".md")) {
         let mermaidRenderCode = ''
         if(src.includes('```mermaid')){
           mermaidRenderCode = `
-          const mermaidDoms = document.querySelectorAll('.mermaid')
-          if(mermaidDoms && mermaidDoms.length>0){
-            import('mermaid').then(res=>{
-              res.initialize({
-                theme: 'forest'
-              })
-              mermaidDoms.forEach((dom,index)=>{
-                res.render('mermaid'+index, dom.innerText, (t)=>{
-                  dom.innerHTML = t
-                })
+          const renderMermaid = function(mermaidModule, mermaidDoms){
+            mermaidModule.initialize({
+              theme: 'forest'
+            })
+            mermaidDoms.forEach((dom,index)=>{
+              mermaidModule.render('mermaid'+index, dom.innerText, (t)=>{
+                dom.innerHTML = t
+                dom.style.opacity = 1
+                dom.parentNode.removeChild(dom.parentNode.querySelector('.mermaid-loading'))
               })
             })
+          }
+          const mermaidDoms = document.querySelectorAll('.mermaid')
+          if(mermaidDoms && mermaidDoms.length>0){
+            if(window._mermaidLoaded && window._mermaidModule){
+              renderMermaid(window._mermaidModule, mermaidDoms)
+            } else {
+              import('mermaid').then(res=>{
+                window._mermaidLoaded = true
+                window._mermaidModule = res
+                renderMermaid(res, mermaidDoms)
+              })
+            }
           }
           `
         }
@@ -69,9 +92,9 @@ export default function (options) {
             ${mermaidRenderCode}
           }
           export default _sfc_md`,
-          map: null
-        }
+          map: null,
+        };
       }
-    }
-  }
+    },
+  };
 }
