@@ -9,8 +9,7 @@
           'layout-menu-item-noChildren': !(
             item.children && item.children.length > 0
           ),
-          'layout-menu-item-active':
-              item.title === activeDocPath
+          'layout-menu-item-active': item.title === activeDocPath,
         }"
         @click="itemClick(item)"
       >
@@ -37,9 +36,7 @@
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
 import { useStore } from 'vuex'
-import {
-  useRouter,
-} from 'vue-router'
+import { useRouter, onBeforeRouteLeave } from 'vue-router'
 import { Menu } from '@src/types'
 import ScrollBar from '@components/scroll-bar/scroll-bar.vue'
 
@@ -47,10 +44,15 @@ export default defineComponent({
   name: 'layout-menu',
   props: {},
   components: { ScrollBar },
+  beforeRouteEnter(to, from) {
+    console.log('beforeRouteEnter >>>>>>>>>>', to)
+  },
   setup: () => {
     const store = useStore()
     const router = useRouter()
-
+    onBeforeRouteLeave((to, from) => {
+      console.log('onBeforeRouteLeave>>', to)
+    })
     return {
       menu: computed(() => store.state.menu),
       activeDocPath: computed(() => store.state.activeDocPath),
@@ -68,7 +70,6 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-
 .layout-menu {
   width: 13%;
   position: fixed !important;
