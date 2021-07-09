@@ -1,5 +1,5 @@
 <template>
-  <ScrollBar class="layout-menu">
+  <r-scroll-bar class="layout-menu">
     <div class="layout-menu-item" v-for="item in menu" :key="item.path">
       <div
         class="layout-menu-item-name"
@@ -30,7 +30,7 @@
         </div>
       </div>
     </div>
-  </ScrollBar>
+  </r-scroll-bar>
 </template>
 
 <script lang="ts">
@@ -38,12 +38,10 @@ import { defineComponent, computed } from 'vue'
 import { useStore } from 'vuex'
 import { useRouter, onBeforeRouteLeave } from 'vue-router'
 import { Menu } from '@src/types'
-import ScrollBar from '@components/scroll-bar/scroll-bar.vue'
 
 export default defineComponent({
   name: 'layout-menu',
   props: {},
-  components: { ScrollBar },
   beforeRouteEnter(to, from) {
     console.log('beforeRouteEnter >>>>>>>>>>', to)
   },

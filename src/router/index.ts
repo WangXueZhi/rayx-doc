@@ -71,9 +71,15 @@ function createMenu(path: string): String[] {
 }
 
 export default function (modules: Modules, otherRouts?: RouteRecordRaw[]) {
-  let routes: RouteRecordRaw[] = [];
+  let routes: RouteRecordRaw[] = [
+    {
+      path: '/',
+      redirect: fixRouterPath('../docs/开始.md'),
+    }
+  ];
 
   for (const path in modules) {
+    console.log(path)
     const menuPathArr = createMenu(fixRouterPath(path, false));
     routes.push({
       path: fixRouterPath(path) + "/:position?",

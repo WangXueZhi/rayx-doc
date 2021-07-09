@@ -12,7 +12,7 @@
     "types": ["vite/client"],
     "paths": {
       "@src/*": ["./src/*"],
-      "@components/*": ["./components/*"],
+      "@components/*": ["./src/components/*"],
     },
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]

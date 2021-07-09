@@ -7,11 +7,16 @@ import "highlight.js/styles/color-brewer.css";
 import docs from "@docs-data"
 console.log(docs)
 
+import RayxUi from "./components/rayx-ui";
+import "./components/rayx-ui/index.scss";
+
+import './style.scss'
+
 // router
 const modules = import.meta.glob("../docs/**/*.md");
 
 const {Router, routes, menu} = createRouter(modules)
-console.log(Router)
+console.log(routes)
 
 Router.beforeEach((to, from, next) => {
   /* 路由发生变化修改页面title */
@@ -41,6 +46,7 @@ const store = createStore<State>({
 })
 
 const app = createApp(App);
+app.use(RayxUi);
 app.use(Router);
 app.use(store)
 app.mount("#app");
