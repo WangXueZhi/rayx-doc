@@ -18,3 +18,5 @@ declare module '@docs-data';
 interface Window {
   R_ICON_FONT_COMPONENT: any;
 }
+
+declare module 'rayx-ui'

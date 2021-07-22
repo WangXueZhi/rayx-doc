@@ -7,11 +7,11 @@ import "highlight.js/styles/color-brewer.css";
 import docs from "@docs-data"
 console.log(docs)
 
-import RayxUi from "./components/rayx-ui";
-import "./components/rayx-ui/index.scss";
+import RayxUi from "rayx-ui";
+import "rayx-ui/lib/index.scss";
 
 import './style.scss'
-
+console.log(RayxUi)
 // router
 const modules = import.meta.glob("../docs/**/*.md");
 
