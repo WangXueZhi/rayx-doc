@@ -12,7 +12,8 @@ export default defineConfig({
     alias: {
       docs: resolve("./docs"),
       '@src': resolve("./src"),
-      '@components': resolve("./src/components")
+      '@components': resolve("./src/components"),
+      '@hooks': resolve("./src/hooks")
     },
   },
   server: {

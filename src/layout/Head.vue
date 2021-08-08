@@ -2,7 +2,7 @@
   <div class="layout-head">
     <div class="project-name">Rayx - 适合团队使用的轻量文档系统</div>
     <div class="head-right">
-      <div class="head-right-search">
+      <div class="head-right-search" @click="show">
         <r-icon name="iconicon-test7" class="demo-icon" />
         <span class="head-right-search-text">Search</span>
         <span>Ctrl+K</span>
@@ -15,14 +15,28 @@
 import { defineComponent, computed } from "vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
+import searchModal from '../component/searchModal/index.vue';
+import useCurrentInstance from '../hooks/useCurrentInstance';
 
 export default defineComponent({
   name: "layout-head",
   setup: () => {
     const store = useStore();
     const router = useRouter();
-
-    return {};
+    const { proxy } = useCurrentInstance();
+    console.log(proxy)
+    const show = function () {
+      proxy.$rModal({
+        animateIn: 'bounceIn',
+        animateOut: 'bounceOut',
+        content: searchModal,
+        bodyOverflow: false,
+        closeOnClickMask: true
+      })
+    }
+    return {
+      show
+    };
   },
 });
 </script>
