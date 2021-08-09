@@ -12,14 +12,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from "vue";
+import { defineComponent, computed, h, createVNode } from "vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
-import searchModal from '../component/searchModal/index.vue';
+import searchModal from '../components/searchModal/index.vue';
 import useCurrentInstance from '../hooks/useCurrentInstance';
 
 export default defineComponent({
   name: "layout-head",
+  components: {searchModal},
   setup: () => {
     const store = useStore();
     const router = useRouter();
@@ -27,9 +28,9 @@ export default defineComponent({
     console.log(proxy)
     const show = function () {
       proxy.$rModal({
-        animateIn: 'bounceIn',
+        animateIn: 'fadeInDown',
         animateOut: 'bounceOut',
-        content: searchModal,
+        content: createVNode(searchModal),
         bodyOverflow: false,
         closeOnClickMask: true
       })

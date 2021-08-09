@@ -3,6 +3,7 @@ import App from "./App.vue";
 import { createStore, Store } from 'vuex'
 import createRouter from "./router"
 import "highlight.js/styles/color-brewer.css";
+// import "animate.css"
 
 import docs from "@docs-data"
 console.log(docs)
