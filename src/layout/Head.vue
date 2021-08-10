@@ -28,7 +28,7 @@ export default defineComponent({
     console.log(proxy)
     const show = function () {
       proxy.$rModal({
-        animateIn: 'fadeInDown',
+        animateIn: 'bounceIn',
         animateOut: 'bounceOut',
         content: createVNode(searchModal),
         bodyOverflow: false,

@@ -2,6 +2,18 @@ const fs = require('fs')
 const path = require('path')
 const marked = require('marked')
 
+marked.use({
+  renderer:{
+    heading(text, level, raw, slugger){
+      console.log(text, level, raw, slugger)
+    }
+  }
+});
+
+const parseMd = function(content, path){
+  return marked(content, 'utf-8')
+}
+
 const getDocsDatas = function (path, cb) {
   const files = fs.readdirSync(path)
   const mdDatas = []
@@ -43,7 +55,8 @@ const getDocsDatas = function (path, cb) {
     }
     mdDatas.push({
       ...cbObj,
-      content: marked(fs.readFileSync(`${path}/${files[i]}`, 'utf-8'))
+      content: parseMd(fs.readFileSync(`${path}/${files[i]}`, `${path}/${files[i]}`)),
+      url: `${path}/${files[i]}`
     })
   }
   return mdDatas;
@@ -66,7 +79,7 @@ export default function (options) {
       }
     },
     load(id) {
-      // console.log('>>>>>>>>>>> load <<<<<<<<<<<<<<<', id)
+      console.log('>>>>>>>>>>> load <<<<<<<<<<<<<<<', id)
       if (id === virtualFileId) {
         // 返回加载模块代码
         const mdDatas = getDocsDatas(DOCS_PATH)

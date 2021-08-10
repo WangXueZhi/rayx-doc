@@ -1,4 +1,4 @@
-import { createApp, h } from "vue";
+import { createApp, h, nextTick } from "vue";
 import App from "./App.vue";
 import { createStore, Store } from 'vuex'
 import createRouter from "./router"
@@ -9,19 +9,16 @@ import docs from "@docs-data"
 console.log(docs)
 
 import RayxUi from "rayx-ui";
-import "rayx-ui/lib/index.scss";
+import "rayx-ui/lib/index.css";
 
 import './style.scss'
-console.log(RayxUi)
 // router
 const modules = import.meta.glob("../docs/**/*.md");
 
 const {Router, routes, menu} = createRouter(modules)
-console.log(routes)
 
 Router.beforeEach((to, from, next) => {
-  /* 路由发生变化修改页面title */
-  console.log(to.meta.menuPath)
+  /* 路由发生变化修改页面title */  
   store.commit('setActiveDocPath', to.meta.menuPath)
   next()
 })

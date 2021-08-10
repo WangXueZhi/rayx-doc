@@ -93,11 +93,18 @@ export default function (modules: Modules, otherRouts?: RouteRecordRaw[]) {
       routes = [...routes, ...otherRouts];
     }
   }
+  console.log(modules)
 
   return {
     Router: createRouter({
       history: createWebHashHistory(),
       routes,
+      scrollBehavior(to, from, savedPosition) {
+        return {
+          el: `#${to.query.p}`,
+          top: 70,
+        }
+      }
     }),
     routes,
     menu,
