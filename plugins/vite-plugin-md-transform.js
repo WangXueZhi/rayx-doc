@@ -13,7 +13,7 @@ export default function vitePluginMd2Vue(options) {
   }
 
   const defaultRenderer = {};
-
+  marked.defaults.renderer = null
   marked.use({
     renderer:
       options && options.markedRender
@@ -40,7 +40,7 @@ export default function vitePluginMd2Vue(options) {
       ? { ...defaultMarkedOptions, ...options.markedOptions }
       : defaultMarkedOptions
   );
-
+  
   return {
     name: "vitePluginMd2Vue",
     transform(src, id) {
@@ -90,7 +90,6 @@ export default function vitePluginMd2Vue(options) {
           _sfc_md.render = _sfc_render
           _sfc_md.mounted = ()=>{
             ${mermaidRenderCode}
-            console.log(123123123123)
           }
           export default _sfc_md`,
           map: null,

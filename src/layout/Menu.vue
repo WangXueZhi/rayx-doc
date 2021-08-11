@@ -48,9 +48,6 @@ export default defineComponent({
   setup: () => {
     const store = useStore()
     const router = useRouter()
-    onBeforeRouteLeave((to, from) => {
-      console.log('onBeforeRouteLeave>>', to)
-    })
     return {
       menu: computed(() => store.state.menu),
       activeDocPath: computed(() => store.state.activeDocPath),

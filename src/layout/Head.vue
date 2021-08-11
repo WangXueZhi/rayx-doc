@@ -27,13 +27,14 @@ export default defineComponent({
     const { proxy } = useCurrentInstance();
     console.log(proxy)
     const show = function () {
-      proxy.$rModal({
-        animateIn: 'bounceIn',
-        animateOut: 'bounceOut',
-        content: createVNode(searchModal),
-        bodyOverflow: false,
-        closeOnClickMask: true
-      })
+      store.commit('setShowSearchState', true)
+      // proxy.$rModal({
+      //   animateIn: 'bounceIn',
+      //   animateOut: 'bounceOut',
+      //   content: createVNode(searchModal),
+      //   bodyOverflow: false,
+      //   closeOnClickMask: true
+      // })
     }
     return {
       show

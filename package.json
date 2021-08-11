@@ -8,9 +8,10 @@
   },
   "dependencies": {
     "highlight.js": "^10.7.2",
+    "lodash": "^4.17.21",
     "marked": "^2.0.3",
     "mermaid": "^8.9.3",
-    "rayx-ui": "^3.0.0-beta.4",
+    "rayx-ui": "^3.0.0-beta.7",
     "vue": "^3.0.5",
     "vue-router": "^4.0.5",
     "vuex": "^4.0.0"

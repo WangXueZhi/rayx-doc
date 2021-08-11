@@ -26,19 +26,26 @@ Router.beforeEach((to, from, next) => {
 // store
 interface State {
   menu: Object[],
-  activeDocPath: String
+  activeDocPath: String,
+  docsData: Object[],
+  showSearch: Boolean
 }
 
 const store = createStore<State>({
   state () {
     return {
       menu: menu,
-      activeDocPath: ''
+      activeDocPath: '',
+      docsData: docs,
+      showSearch: false
     }
   },
   mutations: {
     setActiveDocPath (state, value) {
       state.activeDocPath = value
+    },
+    setShowSearchState (state, value) {
+      state.showSearch = value
     }
   }
 })

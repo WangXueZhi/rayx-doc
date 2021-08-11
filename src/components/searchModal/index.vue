@@ -1,27 +1,75 @@
 <template>
   <div class="search-modal">
     <div class="search-input">
-      <Input size="big">
-        <template #prefix><Icon name="iconicon-test7" /></template>
-      </Input>
+      <r-input size="big" @input="searchInput">
+        <template #prefix><r-icon name="iconicon-test7" /></template>
+      </r-input>
     </div>
     <div class="search-scroll">
-      <ScrollBar class="search-scroll-wrapper">
-
-      </ScrollBar>
+      <r-scroll-bar class="search-scroll-wrapper">
+        <div>
+          <div v-for="(item, index) in searchRes" :key="index">
+            <div v-if="item.isName">
+              <div>{{item.data.name}}</div>
+              <div>页面</div>
+            </div>
+            <div v-else>
+              <div>{{item.v}}</div>
+              <div>所在页面：{{item.data.name}}</div>
+            </div>
+          </div>
+        </div>
+      </r-scroll-bar>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { ref, defineComponent } from 'vue'
-import { Input, Icon, ScrollBar } from 'rayx-ui'
+import { ref, defineComponent, reactive } from 'vue'
+import { useStore } from 'vuex'
+import { useRouter, onBeforeRouteLeave } from 'vue-router'
 export default defineComponent({
   name: 'layout-search-modal',
   mounted(){
     // console.log('mounted', this.$route)
   },
-  components:{Input, Icon, ScrollBar}
+  setup(){
+    const store = useStore()
+    const router = useRouter()
+    const searchRes: any[] = reactive([])
+
+    const searchInput = function(v: string){
+      console.log(v)
+      store.state.docsData.forEach((item: any) => {
+        if(item.name.includes(v)){
+          searchRes.push({
+            data: item,
+            isName: true,
+            v
+          })
+        }
+        if(item.keyWords.includes(v)){
+          searchRes.push({
+            data: item,
+            isName: false,
+            v
+          })
+        }
+        if(item.content.includes(v)){
+          searchRes.push({
+            data: item,
+            isName: false,
+            v
+          })
+        }
+      });
+    }
+
+    return {
+      searchInput,
+      searchRes
+    }
+  }
 })
 </script>
 
