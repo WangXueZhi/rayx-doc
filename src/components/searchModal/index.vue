@@ -63,18 +63,21 @@ export default defineComponent({
 
     const searchInput = function(v: string){
       state.searchRes = []
-      store.state.docsData.forEach((item: any) => {
-        if(item.name.includes(v)){
-          state.searchRes.push({
-            data: item,
-            isPageName: true,
-            pageName: item.name,
-            matchHtml: `<div>${item.name.replace(v, `<span style="color: green">${v}</span>`)}</div>`,
-            v
-          })
-        }
-        // item.keyWords
-      });
+      if(v){
+        store.state.docsData.forEach((item: any) => {
+          if(item.name.includes(v)){
+            state.searchRes.push({
+              data: item,
+              isPageName: true,
+              pageName: item.name,
+              matchHtml: `<div>${item.name.replace(v, `<span style="color: var(--main-color)">${v}</span>`)}</div>`,
+              v
+            })
+          }
+          // item.keyWords
+        });
+      }
+      
       console.log(state.searchRes)
     }
 
