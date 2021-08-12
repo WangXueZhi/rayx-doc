@@ -4290,10 +4290,10 @@ queue-microtask@^1.2.2:
   resolved "http://172.16.104.140:4873/queue-microtask/-/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"
   integrity sha1-SSkii7xyTfrEPg77BYyve2z7YkM=
 
-rayx-ui@^3.0.0-beta.7:
-  version "3.0.0-beta.7"
-  resolved "http://172.16.104.140:4873/rayx-ui/-/rayx-ui-3.0.0-beta.7.tgz#85754b1202c68153d8e1c336195e07a6a0185645"
-  integrity sha1-hXVLEgLGgVPY4cM2GV4HpqAYVkU=
+rayx-ui@^3.0.0-beta.8:
+  version "3.0.0-beta.8"
+  resolved "http://172.16.104.140:4873/rayx-ui/-/rayx-ui-3.0.0-beta.8.tgz#683eb9d1b95e4853ba9b0177713ff6c0a811decf"
+  integrity sha1-aD650bleSFO6mwF3cT/2wKgR3s8=
   dependencies:
     animate.css "^4.1.1"
     axios "^0.21.1"

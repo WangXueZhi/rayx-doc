@@ -8,14 +8,21 @@
     <div class="search-scroll">
       <r-scroll-bar class="search-scroll-wrapper">
         <div>
-          <div v-for="(item, index) in searchRes" :key="index">
-            <div v-if="item.isName">
-              <div>{{item.data.name}}</div>
-              <div>页面</div>
+          <div v-for="(item, index) in state.searchRes" :key="index">
+            <div v-if="item.isPageName">
+              <div>
+                <r-icon name="iconform" :size="20"/>
+                <div v-html="item.matchHtml"></div>
+              </div>
             </div>
             <div v-else>
-              <div>{{item.v}}</div>
-              <div>所在页面：{{item.data.name}}</div>
+              <div>
+                <div>#</div>
+                <div>
+                  <div>{{item.v}}</div>
+                  <div>所在页面：{{item.data.name}}</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -28,6 +35,20 @@
 import { ref, defineComponent, reactive } from 'vue'
 import { useStore } from 'vuex'
 import { useRouter, onBeforeRouteLeave } from 'vue-router'
+
+type searchResType = {
+  data: Object
+  isPageName: Boolean
+  pageName?: String
+  matchContent?: String
+  matchHtml: String
+  v: String,
+}
+
+type stateType = {
+  searchRes: searchResType[]
+}
+
 export default defineComponent({
   name: 'layout-search-modal',
   mounted(){
@@ -36,38 +57,30 @@ export default defineComponent({
   setup(){
     const store = useStore()
     const router = useRouter()
-    const searchRes: any[] = reactive([])
+    const state: stateType = reactive({
+      searchRes: []
+    })
 
     const searchInput = function(v: string){
-      console.log(v)
+      state.searchRes = []
       store.state.docsData.forEach((item: any) => {
         if(item.name.includes(v)){
-          searchRes.push({
+          state.searchRes.push({
             data: item,
-            isName: true,
+            isPageName: true,
+            pageName: item.name,
+            matchHtml: `<div>${item.name.replace(v, `<span style="color: green">${v}</span>`)}</div>`,
             v
           })
         }
-        if(item.keyWords.includes(v)){
-          searchRes.push({
-            data: item,
-            isName: false,
-            v
-          })
-        }
-        if(item.content.includes(v)){
-          searchRes.push({
-            data: item,
-            isName: false,
-            v
-          })
-        }
+        // item.keyWords
       });
+      console.log(state.searchRes)
     }
 
     return {
       searchInput,
-      searchRes
+      state
     }
   }
 })
