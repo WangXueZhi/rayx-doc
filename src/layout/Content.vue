@@ -1,13 +1,19 @@
 <template>
   <div class="layout-content">
-    <router-view></router-view>
+    <router-view  v-slot="{ Component, route }">
+      <Md
+        :md="Component"
+      />
+    </router-view>
   </div>
 </template>
 
 <script lang="ts">
 import { ref, defineComponent } from 'vue'
+import Md from './MD.vue'
 export default defineComponent({
   name: 'layout-content',
+  components: {Md},
   mounted(){
     // console.log('mounted', this.$route)
   },

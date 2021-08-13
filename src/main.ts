@@ -5,8 +5,8 @@ import createRouter from "./router"
 import "highlight.js/styles/color-brewer.css";
 // import "animate.css"
 
+
 import docs from "@docs-data"
-console.log(docs)
 
 import RayxUi from "rayx-ui";
 import "rayx-ui/lib/index.css";

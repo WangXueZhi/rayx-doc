@@ -25,7 +25,6 @@ export default defineComponent({
     const store = useStore();
     const router = useRouter();
     const { proxy } = useCurrentInstance();
-    console.log(proxy)
     const show = function () {
       store.commit('setShowSearchState', true)
       // proxy.$rModal({

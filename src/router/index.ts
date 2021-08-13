@@ -79,11 +79,19 @@ export default function (modules: Modules, otherRouts?: RouteRecordRaw[]) {
   ];
 
   for (const path in modules) {
-    console.log(path)
     const menuPathArr = createMenu(fixRouterPath(path, false));
     routes.push({
-      path: fixRouterPath(path) + "/:position?",
-      component: modules[path],
+      path: fixRouterPath(path),
+      component: ()=>{
+        return new Promise((resolve, reject)=>{
+          modules[path]().then(res=>{
+            resolve(res.default)
+            const mdHeadingMap: any = localStorage.getItem('md-heading-map') || {}
+            mdHeadingMap[fixRouterPath(path)] = res.headings
+            localStorage.setItem('md-heading-map', mdHeadingMap)
+          })
+        })
+      },
       meta: {
         menuPath: menuPathArr.length > 0 ? menuPathArr.join(',') : menuPathArr[0],
       },
@@ -93,7 +101,6 @@ export default function (modules: Modules, otherRouts?: RouteRecordRaw[]) {
       routes = [...routes, ...otherRouts];
     }
   }
-  console.log(modules)
 
   return {
     Router: createRouter({

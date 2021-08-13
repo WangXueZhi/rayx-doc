@@ -16,11 +16,6 @@ export default defineComponent({
   components: {
     Layout, searchModal
   },
-  // setup(){
-  //   onMounted(()=>{
-  //     console.log(this)
-  //   })
-  // },
   mounted() {
     // console.log('mounted', this.$route)
   },
