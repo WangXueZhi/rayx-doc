@@ -1,33 +1,26 @@
 const marked = require("marked");
 const hljs = require("highlight.js");
 
-export default function vitePluginMd2Vue(options) {
-  const classArray = ["md2vue-wrapper"];
-  let keyWordsInOneMd = []
+let keyWordsInOneMd = []
 
-  if (options && options.renderWrapperClass) {
-    if (typeof options.renderWrapperClass === "string") {
-      classArray.push(options.renderWrapperClass);
-    }
-    if (Array.isArray(options.renderWrapperClass)) {
-      classArray.push(...options.renderWrapperClass);
-    }
-  }
+const markedInit = function(options){
+  marked.defaults.renderer = null
 
   const defaultRenderer = {
     heading(text, level, raw, slugger){
+      console.log(1, raw)
       keyWordsInOneMd.push(text)
       return `<h${level} id="${text}">${raw}</h${level}>`
     }
   };
-  marked.defaults.renderer = null
+  
   marked.use({
     renderer:
       options && options.markedRender
         ? { ...defaultRenderer, ...options.markedRender }
         : defaultRenderer,
   });
-
+  
   const defaultMarkedOptions = {
     highlight: function (code, lang) {
       if (lang === "mermaid") {
@@ -47,11 +40,25 @@ export default function vitePluginMd2Vue(options) {
       ? { ...defaultMarkedOptions, ...options.markedOptions }
       : defaultMarkedOptions
   );
+}
+
+export default function vitePluginMd2Vue(options) {
+  const classArray = ["md2vue-wrapper"];
+
+  if (options && options.renderWrapperClass) {
+    if (typeof options.renderWrapperClass === "string") {
+      classArray.push(options.renderWrapperClass);
+    }
+    if (Array.isArray(options.renderWrapperClass)) {
+      classArray.push(...options.renderWrapperClass);
+    }
+  }
   
   return {
     name: "vitePluginMd2Vue",
     transform(src, id) {
       if (id.endsWith(".md")) {
+        markedInit(options)
         keyWordsInOneMd = []
         let mermaidRenderCode = ''
         if(src.includes('```mermaid')){

@@ -5,7 +5,6 @@
       <div class="head-right-search" @click="show">
         <r-icon name="iconicon-test7" class="demo-icon" />
         <span class="head-right-search-text">Search</span>
-        <span>Ctrl+K</span>
       </div>
     </div>
   </div>

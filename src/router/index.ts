@@ -86,9 +86,10 @@ export default function (modules: Modules, otherRouts?: RouteRecordRaw[]) {
         return new Promise((resolve, reject)=>{
           modules[path]().then(res=>{
             resolve(res.default)
-            const mdHeadingMap: any = localStorage.getItem('md-heading-map') || {}
+            const getSessionItem = sessionStorage.getItem('md-heading-map')
+            const mdHeadingMap: any = getSessionItem? JSON.parse(getSessionItem) : {}
             mdHeadingMap[fixRouterPath(path)] = res.headings
-            localStorage.setItem('md-heading-map', mdHeadingMap)
+            sessionStorage.setItem('md-heading-map', JSON.stringify(mdHeadingMap))
           })
         })
       },
@@ -101,6 +102,8 @@ export default function (modules: Modules, otherRouts?: RouteRecordRaw[]) {
       routes = [...routes, ...otherRouts];
     }
   }
+
+  console.log(routes)
 
   return {
     Router: createRouter({

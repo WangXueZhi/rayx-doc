@@ -124,6 +124,7 @@ export default function (options) {
     load(id) {
       // console.log('>>>>>>>>>>> load <<<<<<<<<<<<<<<', id)
       if (id === virtualFileId) {
+        marked.defaults.renderer = null
         marked.use({
           renderer:{
             heading(text, level, raw, slugger){
@@ -132,6 +133,7 @@ export default function (options) {
             }
           }
         });
+        // console.log(marked.defaults.renderer)
         // 返回加载模块代码
         const mdDatas = getDocsDatasAsArray(DOCS_PATH)
         return `export default ${JSON.stringify(mdDatas)}`;
