@@ -59,7 +59,7 @@ export default defineComponent({
     })
 
     const goPage = function(path: string, query: string){
-      router.push(fixRouterPath(path)+query)
+      router.push(fixRouterPath(path)+(query || ''))
       store.commit('setShowSearchState', false)
     }
 
