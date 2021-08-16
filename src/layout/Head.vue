@@ -14,12 +14,10 @@
 import { defineComponent, computed, h, createVNode } from "vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
-import searchModal from '../components/searchModal/index.vue';
 import useCurrentInstance from '../hooks/useCurrentInstance';
 
 export default defineComponent({
   name: "layout-head",
-  components: {searchModal},
   setup: () => {
     const store = useStore();
     const router = useRouter();

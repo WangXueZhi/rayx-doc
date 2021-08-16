@@ -11,6 +11,9 @@ import docs from "@docs-data"
 import RayxUi from "rayx-ui";
 import "rayx-ui/lib/index.css";
 
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
+
 import './style.scss'
 // router
 const modules = import.meta.glob("../docs/**/*.md");
@@ -19,9 +22,15 @@ const {Router, routes, menu} = createRouter(modules)
 
 Router.beforeEach((to, from, next) => {
   /* 路由发生变化修改页面title */  
+  NProgress.start()
   store.commit('setActiveDocPath', to.meta.menuPath)
   next()
 })
+
+Router.afterEach(() => {
+  NProgress.done()
+})
+
 
 // store
 interface State {

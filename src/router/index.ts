@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import { Menu } from "@src/types"
+import { fixRouterPath } from '../util/util'
 
 type Modules = Record<
   string,
@@ -7,16 +8,6 @@ type Modules = Record<
     [key: string]: any;
   }>
 >;
-
-function fixRouterPath(path: string, shouldEncode: boolean = true) {
-  const pathArr = path
-    .split("/")
-    .map((item) => (shouldEncode ? encodeURIComponent(item) : item));
-  if (pathArr[0].includes(".")) {
-    pathArr.splice(0, 1, "");
-  }
-  return pathArr.join("/");
-}
 
 const menu: Menu[] = [];
 let currentMenu: Menu[] = menu;

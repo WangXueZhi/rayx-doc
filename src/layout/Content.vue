@@ -29,7 +29,6 @@ export default defineComponent({
     watch(
       () => route.path,
       async newPath => {
-        console.log(newPath)
         state.path = newPath
         const mdHeadingMapStr: any = sessionStorage.getItem('md-heading-map')
 

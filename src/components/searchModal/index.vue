@@ -9,19 +9,15 @@
       <r-scroll-bar class="search-scroll-wrapper">
         <div>
           <div v-for="(item, index) in state.searchRes" :key="index">
-            <div v-if="item.isPageName">
-              <div>
-                <r-icon name="iconform" :size="20"/>
-                <div v-html="item.matchHtml"></div>
-              </div>
+            <div v-if="item.isPageName" class="search-scroll-item" @click="goPage(item.data.url.slice(1))">
+              <r-icon name="iconform" :size="20" class="search-scroll-item-left"/>
+              <div v-html="item.matchHtml" class="search-scroll-item-content search-scroll-item-mainText"></div>
             </div>
-            <div v-else>
-              <div>
-                <div>#</div>
-                <div>
-                  <div>{{item.v}}</div>
-                  <div>所在页面：{{item.data.name}}</div>
-                </div>
+            <div v-else class="search-scroll-item"  @click="goPage(`${item.data.url.slice(1)}`,`?p=${item.matchContent}`)">
+              <div class="search-scroll-item-left">#</div>
+              <div class="search-scroll-item-content">
+                <div v-html="item.matchHtml" class="search-scroll-item-mainText"></div>
+                <div class="search-scroll-item-content-heading">{{item.data.name}}</div>
               </div>
             </div>
           </div>
@@ -35,6 +31,7 @@
 import { ref, defineComponent, reactive } from 'vue'
 import { useStore } from 'vuex'
 import { useRouter, onBeforeRouteLeave } from 'vue-router'
+import { fixRouterPath } from '../../util/util'
 
 type searchResType = {
   data: Object
@@ -42,7 +39,7 @@ type searchResType = {
   pageName?: String
   matchContent?: String
   matchHtml: String
-  v: String,
+  searchValue: String,
 }
 
 type stateType = {
@@ -61,6 +58,11 @@ export default defineComponent({
       searchRes: []
     })
 
+    const goPage = function(path: string, query: string){
+      router.push(fixRouterPath(path)+query)
+      store.commit('setShowSearchState', false)
+    }
+
     const searchInput = function(v: string){
       state.searchRes = []
       if(v){
@@ -71,17 +73,29 @@ export default defineComponent({
               isPageName: true,
               pageName: item.name,
               matchHtml: `<div>${item.name.replace(v, `<span style="color: var(--main-color)">${v}</span>`)}</div>`,
-              v
+              searchValue: v
             })
           }
           // item.keyWords
+          item.keyWords.forEach((keyword: string) => {
+            const kdIndex = keyword.indexOf(v)
+            if(kdIndex >= 0){
+              state.searchRes.push({
+                data: item,
+                isPageName: false,
+                pageName: item.name,
+                matchHtml: `<div>${keyword.replace(v, `<span style="color: var(--main-color)">${v}</span>`)}</div>`,
+                searchValue: v,
+                matchContent: keyword
+              })
+            }
+          });
         });
       }
-      
-      console.log(state.searchRes)
     }
 
     return {
+      goPage,
       searchInput,
       state
     }
@@ -105,9 +119,42 @@ export default defineComponent({
 
     .search-scroll{
       padding: 10px;
+      padding-top: 0;
       .search-scroll-wrapper{
         height: 300px;
-        background-color: #fff;
+
+        .search-scroll-item{
+          cursor: pointer;
+          display: flex;
+          background: #fff;
+          border-radius: 4px;
+          box-shadow: 0 1px 3px 0 #d4d9e1;
+          padding-left: var(--docsearch-spacing);
+          padding: 12px;
+          align-items: center;
+          height: 56px;
+          box-sizing: border-box;
+          margin-bottom: 5px;
+
+          .search-scroll-item-left{
+            width: 20px;
+            display: flex;
+            justify-content: center;
+          }
+
+          .search-scroll-item-content{
+            padding-left: 10px;
+
+            .search-scroll-item-content-heading{
+              color: #90a4b7;
+              font-size: 12px;
+            }
+          }
+
+          .search-scroll-item-mainText{
+            font-size: 15px;
+          }
+        }
       }
     }
 }
