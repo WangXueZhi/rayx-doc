@@ -1,121 +1,107 @@
 <template>
-  <r-scroll-bar class="layout-menu">
-    <div class="layout-menu-item" v-for="item in menu" :key="item.path">
-      <div
-        class="layout-menu-item-name"
-        :class="{
-          'layout-menu-item-hasChildren':
-            item.children && item.children.length > 0,
-          'layout-menu-item-noChildren': !(
-            item.children && item.children.length > 0
-          ),
-          'layout-menu-item-active': item.title === activeDocPath,
-        }"
-        @click="itemClick(item)"
-      >
+  <div
+    :class="[`layout-menu-item-${level}`]"
+    v-for="item in menu"
+    :key="item.path"
+  >
+    <template v-if="item.children && item.children.length > 0">
+      <div class="layout-menu-item-name layout-menu-item-hasChildren">
         {{ item.title }}
       </div>
-      <div class="layout-menu-item-subChildren">
-        <div
-          class="layout-menu-item-sub"
-          :class="{
-            'layout-menu-item-active':
-              `${item.title},${subitem.title}` === activeDocPath,
-          }"
-          v-for="subitem in item.children"
-          :key="subitem.path"
-          @click="itemClick(subitem)"
-        >
-          {{ subitem.title }}
-        </div>
-      </div>
+      <layout-menu :menu="item.children" :level="level + 1" />
+    </template>
+    <div
+      v-else
+      class="layout-menu-item-name"
+      :class="{
+        'layout-menu-item-active': item.path === activeRoutPath,
+      }"
+      @click="itemClick(item)"
+    >
+      {{ item.title }}
     </div>
-  </r-scroll-bar>
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
-import { useStore } from 'vuex'
-import { useRouter, onBeforeRouteLeave } from 'vue-router'
-import { Menu } from '@src/types'
+import { defineComponent, computed } from "vue";
+import { useStore } from "vuex";
+import { useRouter } from "vue-router";
+import { Menu } from "@src/types";
 
 export default defineComponent({
-  name: 'layout-menu',
-  props: {},
-  beforeRouteEnter(to, from) {
-    console.log('beforeRouteEnter >>>>>>>>>>', to)
+  name: "layout-menu",
+  props: {
+    menu: {
+      type: Array,
+      default: () => [],
+    },
+    level: {
+      type: Number,
+      default: 0,
+    },
   },
   setup: () => {
-    const store = useStore()
-    const router = useRouter()
+    const store = useStore();
+    const router = useRouter();
     return {
-      menu: computed(() => store.state.menu),
-      activeDocPath: computed(() => store.state.activeDocPath),
+      activeRoutPath: computed(() => store.state.activeRoutPath),
       itemClick: (data: Menu) => {
         if (data.children && data.children.length > 0) {
-          return
+          return;
         }
         if (data.path) {
-          router.push(data.path)
+          router.push(data.path);
         }
       },
-    }
+    };
   },
-})
+});
 </script>
 
 <style scoped lang="scss">
-.layout-menu {
-  width: 13%;
-  position: fixed !important;
-  top: 3.6rem;
-  bottom: 0;
-  border-right: 1px solid #f0f0f0;
-  background-color: #fff;
-  padding: 10px 0;
-  .layout-menu-item {
-    padding: 5px 26px;
-    position: relative;
-    z-index: 1;
+.layout-menu-item-name {
+  transition: all 0.2s ease-in-out;
+  padding: 5px 0;
+  color: #2c3e50;
+  &.layout-menu-item-active {
+    color: #1890ff !important;
+  }
+  &.layout-menu-item-hasChildren {
+    padding: 5px 0;
+  }
+  &.layout-menu-item-noChildren {
+    cursor: pointer;
+    &:hover {
+      color: #1890ff;
+    }
+  }
+}
 
-    .layout-menu-item-name {
-      transition: all 0.2s ease-in-out;
-      font-size: 18px;
+.layout-menu-item-0 {
+  padding-left: 26px;
+  position: relative;
+  z-index: 1;
+  margin-top: 15px;
+  &:first-child{
+    margin-top: 0;
+  }
 
-      &.layout-menu-item-active {
-        color: #1890ff !important;
-        // background-color: #e6f7ff;
-        // border-right: 1px solid #1890ff;
-      }
+  & > .layout-menu-item-name {
+    font-size: 18px;
+  }
 
-      &.layout-menu-item-hasChildren {
-        border-bottom: 1px solid #f0f0f0;
-        padding-bottom: 5px;
-      }
-
-      &.layout-menu-item-noChildren {
-        cursor: pointer;
-        &:hover {
-          color: #1890ff;
-        }
-      }
+  .layout-menu-item-1 {
+    padding-left: 15px;
+    & > .layout-menu-item-name {
+      font-size: 16px;
+      color: #727272;
     }
 
-    .layout-menu-item-subChildren {
-      padding: 5px 0;
-      .layout-menu-item-sub {
-        transition: all 0.2s ease-in-out;
+    .layout-menu-item-2 {
+      padding-left: 15px;
+      & > .layout-menu-item-name {
         font-size: 14px;
-        cursor: pointer;
-        padding: 5px 0;
-        &:hover {
-          color: #1890ff;
-        }
-        &.layout-menu-item-active {
-          color: #1890ff !important;
-          // background-color: #e6f7ff;
-          // border-right: 1px solid #1890ff;
-        }
       }
     }
   }

@@ -3,8 +3,6 @@ import App from "./App.vue";
 import { createStore, Store } from 'vuex'
 import createRouter from "./router"
 import "highlight.js/styles/color-brewer.css";
-// import "animate.css"
-
 
 import docs from "@docs-data"
 
@@ -24,6 +22,8 @@ Router.beforeEach((to, from, next) => {
   /* 路由发生变化修改页面title */  
   NProgress.start()
   store.commit('setActiveDocPath', to.meta.menuPath)
+  store.commit('setActiveRoutPath', to.path)
+  
   next()
 })
 
@@ -37,7 +37,8 @@ interface State {
   menu: Object[],
   activeDocPath: String,
   docsData: Object[],
-  showSearch: Boolean
+  showSearch: Boolean,
+  activeRoutPath: string
 }
 
 const store = createStore<State>({
@@ -46,7 +47,8 @@ const store = createStore<State>({
       menu: menu,
       activeDocPath: '',
       docsData: docs,
-      showSearch: false
+      showSearch: false,
+      activeRoutPath: ''
     }
   },
   mutations: {
@@ -55,7 +57,10 @@ const store = createStore<State>({
     },
     setShowSearchState (state, value) {
       state.showSearch = value
-    }
+    },
+    setActiveRoutPath (state, value) {
+      state.activeRoutPath = value
+    },
   }
 })
 
