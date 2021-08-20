@@ -12,7 +12,7 @@
     </template>
     <div
       v-else
-      class="layout-menu-item-name"
+      class="layout-menu-item-name layout-menu-item-noChildren"
       :class="{
         'layout-menu-item-active': item.path === activeRoutPath,
       }"
@@ -73,7 +73,7 @@ export default defineComponent({
   &.layout-menu-item-noChildren {
     cursor: pointer;
     &:hover {
-      color: #1890ff;
+      color: #1890ff !important;
     }
   }
 }

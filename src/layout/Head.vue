@@ -20,18 +20,19 @@ export default defineComponent({
   name: "layout-head",
   setup: () => {
     const store = useStore();
-    const router = useRouter();
-    const { proxy } = useCurrentInstance();
     const show = function () {
       store.commit('setShowSearchState', true)
-      // proxy.$rModal({
-      //   animateIn: 'bounceIn',
-      //   animateOut: 'bounceOut',
-      //   content: createVNode(searchModal),
-      //   bodyOverflow: false,
-      //   closeOnClickMask: true
-      // })
     }
+    document.addEventListener('keydown', (e)=>{
+      if(e.ctrlKey && e.key == 'k'){
+        store.commit('setShowSearchState', true)
+        e.preventDefault()
+      }
+      if(e.key == 'Escape'){
+        store.commit('setShowSearchState', false)
+        e.preventDefault()
+      }
+    })
     return {
       show
     };

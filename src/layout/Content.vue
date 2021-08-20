@@ -1,13 +1,14 @@
 <template>
   <div class="layout-content">
     <router-view></router-view>
-    <div v-if="state.headingNav.length > 0" class="layout-heading-menu">
+    <r-scroll-bar class="layout-heading-menu" :class="{'layout-heading-menu-moreHeading': state.moreHeading}" v-if="state.headingNav.length > 0">
       <div class="layout-heading-menu-wrapper">
         <div v-for="(item, index) in state.headingNav" :key="index" class="layout-heading-menu-item" @click="goHeading(item)">
           {{item}}
         </div>
       </div>
-    </div>
+      <r-icon name="iconicon-test40" class="layout-heading-menu-arrow" :class="{'layout-heading-menu-arrow-moreHeading': state.moreHeading}" @click="switchHeading"/>
+    </r-scroll-bar>
   </div>
 </template>
 
@@ -23,8 +24,13 @@ export default defineComponent({
     
     const state = reactive({
       headingNav: [],
-      path: route.path
+      path: route.path,
+      moreHeading: false
     })
+
+    const switchHeading = function(){
+      // state.moreHeading = !state.moreHeading
+    }
     
     watch(
       () => route.path,
@@ -46,7 +52,8 @@ export default defineComponent({
 
     return {
       state,
-      goHeading
+      goHeading,
+      switchHeading
     }
   }
 })
@@ -60,15 +67,43 @@ export default defineComponent({
     padding-top: 1px;
     .layout-heading-menu{
       position: fixed;
-      right: 100px;
-      top: 70px;
-      border-left: 1px solid #f0f0f0;
+      right: 26px;
+      top: 58px;
+      bottom: 0;
+      width: 230px;
       padding-left: 20px;
-      min-width: 100px;
+      padding-top: 20px;
+      transition: all .3s ease 0s;
+      background-color: #fff;
+
+      &:hover{
+        width: 400px;
+        .layout-heading-menu-arrow{
+          transform: rotate(180deg);
+        }
+      }
+
+      &.layout-heading-menu-moreHeading{
+        width: 350px;
+      }
+
+      .layout-heading-menu-arrow{
+        position: absolute;
+        left: 0;
+        top: 20px;
+        cursor: pointer;
+        transition: transform .3s ease 0s;
+        transform-origin: center;
+        &.layout-heading-menu-arrow-moreHeading{
+          transform: rotate(180deg);
+        }
+      }
 
       .layout-heading-menu-wrapper{
         position: relative;
-
+        padding-right: 20px;
+        border-left: 1px solid #f0f0f0;
+        padding-left: 20px;
         // &::before{
         //   content: '';
         //   position: absolute;
@@ -80,6 +115,9 @@ export default defineComponent({
           font-size: 13px;
           color: #515a6e;
           cursor: pointer;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
           &:hover{
             color: var(--main-color);
           }
