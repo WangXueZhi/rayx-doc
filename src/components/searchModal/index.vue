@@ -1,7 +1,7 @@
 <template>
   <div class="search-modal">
     <div class="search-input">
-      <r-input size="big" @input="searchInput">
+      <r-input size="big" @input="searchInput" autofocus>
         <template #prefix><r-icon name="iconicon-test7" /></template>
       </r-input>
     </div>
