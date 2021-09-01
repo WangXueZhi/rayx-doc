@@ -1,5 +1,6 @@
 const marked = require("marked");
 const hljs = require("highlight.js");
+const { escape } = require('marked/src/helpers.js');
 
 let keyWordsInOneMd = []
 
@@ -8,9 +9,29 @@ const markedInit = function(options){
 
   const defaultRenderer = {
     heading(text, level, raw, slugger){
-      console.log(1, raw)
       keyWordsInOneMd.push(text)
       return `<h${level} id="${text}">${raw}</h${level}>`
+    },
+    code(code, infostring, escaped){
+      console.log(this.options.langPrefix)
+      const lang = (infostring || '').match(/\S*/)[0];
+      
+      if (infostring === 'mermaid') {
+        return `<pre><code class="language-mermaid"><div class='mermaidWrapper' style="position: relative">
+          ${options && options.mermaidLoadingHtml ? options.mermaidLoadingHtml : '<div class="mermaid-loading" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); color: rgba(0, 0, 0, 0.54)">loading...</div>'}
+            <div class='mermaid' style="opacity: 0">${code}</div>
+        </div></code></pre>`;
+      }
+
+      const hightLightedCode = this.options.highlight(code)
+
+      const preCodeText = lang ? `<pre><code class="${this.options.langPrefix}${escape(lang, true)} hljs">${hightLightedCode}</code></pre>\n` 
+      : `<pre><code class="hljs">${hightLightedCode}</code></pre>\n`;
+
+      return `
+        <div class="md-code-hijs">
+          ${preCodeText}
+      </div>`;
     }
   };
   
@@ -23,15 +44,7 @@ const markedInit = function(options){
   
   const defaultMarkedOptions = {
     highlight: function (code, lang) {
-      if (lang === "mermaid") {
-        return `<div class='mermaidWrapper' style="position: relative">
-        ${options && options.mermaidLoadingHtml ? options.mermaidLoadingHtml : '<div class="mermaid-loading" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); color: rgba(0, 0, 0, 0.54)">loading...</div>'}
-          <div class='mermaid' style="opacity: 0">${code}</div>
-        </div>`;
-      }
-      return `<div class="md-code-hijs">${
-        hljs.highlightAuto(code).value
-      }</div>`;
+      return hljs.highlightAuto(code).value;
     },
   };
 
