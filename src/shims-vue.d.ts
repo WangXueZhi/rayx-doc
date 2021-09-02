@@ -14,7 +14,7 @@ declare module '*.vue' {
 // }
 
 declare module '@docs-data';
-
+declare module '@docs-config';
 interface Window {
   R_ICON_FONT_COMPONENT: any;
 }
