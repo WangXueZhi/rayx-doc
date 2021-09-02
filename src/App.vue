@@ -43,19 +43,4 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
-
-.md-code-hijs {
-  padding: 10px;
-  background-color: #fafafa;
-  border: 1px solid #eaeefb;
-  line-height: 1.5;
-  font-size: 13px;
-  font-family: Menlo, Monaco, Consolas, Courier, monospace;
-  border-radius: 4px;
-  -webkit-font-smoothing: auto;
-
-  &:before {
-    content: none;
-  }
-}
 </style>
