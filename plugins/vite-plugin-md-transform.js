@@ -13,7 +13,6 @@ const markedInit = function(options){
       return `<h${level} id="${text}">${raw}</h${level}>`
     },
     code(code, infostring, escaped){
-      console.log(this.options.langPrefix)
       const lang = (infostring || '').match(/\S*/)[0];
       
       if (infostring === 'mermaid') {

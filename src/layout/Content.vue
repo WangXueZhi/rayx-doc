@@ -4,10 +4,10 @@
     <r-scroll-bar class="layout-heading-menu" :class="{'layout-heading-menu-moreHeading': state.moreHeading}" v-if="state.headingNav.length > 0">
       <div class="layout-heading-menu-wrapper">
         <div v-for="(item, index) in state.headingNav" :key="index" class="layout-heading-menu-item" @click="goHeading(item)">
-          {{item}}
+          {{item.text}}
         </div>
       </div>
-      <r-icon name="iconicon-test40" class="layout-heading-menu-arrow" :class="{'layout-heading-menu-arrow-moreHeading': state.moreHeading}" @click="switchHeading"/>
+      <!-- <r-icon name="iconicon-test40" class="layout-heading-menu-arrow" :class="{'layout-heading-menu-arrow-moreHeading': state.moreHeading}" @click="switchHeading"/> -->
     </r-scroll-bar>
   </div>
 </template>
@@ -46,8 +46,8 @@ export default defineComponent({
       }
     )
 
-    const goHeading = function(headingName: string){
-      router.push(state.path+'?p='+headingName)
+    const goHeading = function(headingItem: any){
+      router.push(state.path+'?p='+headingItem.text)
     }
 
     return {
@@ -76,12 +76,12 @@ export default defineComponent({
       transition: all .3s ease 0s;
       background-color: #fff;
 
-      &:hover{
-        width: 400px;
-        .layout-heading-menu-arrow{
-          transform: rotate(180deg);
-        }
-      }
+      // &:hover{
+      //   width: 400px;
+      //   .layout-heading-menu-arrow{
+      //     transform: rotate(180deg);
+      //   }
+      // }
 
       &.layout-heading-menu-moreHeading{
         width: 350px;

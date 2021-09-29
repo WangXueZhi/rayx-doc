@@ -40,7 +40,6 @@ function createMenu(path: string): String[] {
     const findItem = findMenuItem(currentMenu, title);
     if (!findItem) {
       const link = currentItem ? [...currentItem.link, title] : [title]
-      console.log('')
       const newItem: Menu = {
         title: title,
         link: link,
@@ -115,8 +114,6 @@ export default function (modules: Modules, otherRouts?: RouteRecordRaw[]) {
   }
   
   deepSort(menu)
-
-  console.log(menu)
 
   return {
     Router: createRouter({

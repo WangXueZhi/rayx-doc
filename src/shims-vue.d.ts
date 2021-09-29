@@ -12,7 +12,7 @@ declare module '*.vue' {
 //   }
 //   export default component
 // }
-
+declare module '*.md'
 declare module '@docs-data';
 declare module '@docs-config';
 interface Window {

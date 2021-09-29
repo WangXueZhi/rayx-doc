@@ -1,0 +1,54 @@
+Arguments: 
+  C:\Users\grkj\AppData\Roaming\nvm\nodejs\node.exe C:\Users\grkj\AppData\Roaming\nvm\nodejs\node_modules\yarn\bin\yarn.js
+
+PATH: 
+  D:\Git\mingw64\bin;D:\Git\usr\bin;C:\Users\grkj\bin;D:\Anaconda3;D:\Anaconda3\Library\mingw-w64\bin;D:\Anaconda3\Library\usr\bin;D:\Anaconda3\Library\bin;D:\Anaconda3\Scripts;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;D:\Git\cmd;C:\Users\grkj\AppData\Roaming\nvm;C:\Users\grkj\AppData\Roaming\nvm\nodejs;C:\Users\grkj\AppData\Local\Microsoft\WindowsApps;D:\Microsoft VS Code\bin;C:\Users\grkj\AppData\Roaming\nvm;C:\Users\grkj\AppData\Roaming\nvm\nodejs
+
+Yarn version: 
+  1.22.11
+
+Node version: 
+  12.20.2
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: ENOTDIR: not a directory, scandir 'C:\Users\grkj\AppData\Local\Yarn\Cache\v6\npm-vite-plugin-md2vue-0.0.0-0048ec4a-8e2c-4240-9047-c2fc4efd6e7e-1632813252999\node_modules\vite-plugin-md2vue'
+
+npm manifest: 
+  {
+    "name": "rayx-docs",
+    "version": "0.0.0",
+    "scripts": {
+      "dev": "vite",
+      "build": "vite build",
+      "serve": "vite preview"
+    },
+    "dependencies": {
+      "highlight.js": "^10.7.2",
+      "lodash": "^4.17.21",
+      "marked": "^2.0.3",
+      "mermaid": "^8.9.3",
+      "nprogress": "^0.2.0",
+      "rayx-ui": "^3.0.0-beta.9",
+      "vue": "^3.0.5",
+      "vue-router": "^4.0.5",
+      "vuex": "^4.0.0"
+    },
+    "devDependencies": {
+      "@vitejs/plugin-vue": "^1.1.5",
+      "@vue/compiler-sfc": "^3.0.5",
+      "sass": "^1.32.11",
+      "typescript": "^4.1.3",
+      "vite": "^2.1.0",
+      "vite-plugin-md2vue": "E:\\github\\vite-plugin-md2vue\\dist\\index.js",
+      "vue-tsc": "^0.0.8"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
