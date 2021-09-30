@@ -73,7 +73,7 @@ export default function (modules: Modules, otherRouts?: RouteRecordRaw[]) {
   let routes: RouteRecordRaw[] = [
     {
       path: '/',
-      redirect: fixRouterPath('../docs/开始.md'),
+      redirect: fixRouterPath(`../docs/${docsConfig.defaultPage}`),
     }
   ];
 

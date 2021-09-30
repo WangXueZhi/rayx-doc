@@ -1,9 +1,7 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
 import vue from "@vitejs/plugin-vue";
-// import vitePluginMdTransform from "./plugins/vite-plugin-md-transform";
 import vitePluginDocs from "./plugins/vite-plugin-docs";
-// import vitePluginMd2Vue from "./plugins/vite-plugin-md-transform"; //"vite-plugin-md2vue";
 import vitePluginMd2Vue from "vite-plugin-md2vue";
 import vitePluginDocsConfig from "./plugins/vite-plugin-docs-config"
 // https://vitejs.dev/config/
