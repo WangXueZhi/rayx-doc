@@ -3,7 +3,6 @@ Mermaid是一种编写甘特图、流程图、顺序图等各种图形的语法�
 
 下面就简单例子，具体更多写法就参考文档吧，[mermaid官方文档](https://mermaid-js.github.io/mermaid/#/flowchart)。
 
-
 ## 举个栗子
 
 代码长这样
