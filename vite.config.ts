@@ -4,10 +4,9 @@ import vue from "@vitejs/plugin-vue";
 import vitePluginDocs from "./plugins/vite-plugin-docs";
 import vitePluginMd2Vue from "vite-plugin-md2vue";
 import vitePluginDocsConfig from "./plugins/vite-plugin-docs-config"
-import { nodeResolve } from '@rollup/plugin-node-resolve';
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), vitePluginMd2Vue(), vitePluginDocs(), vitePluginDocsConfig(), nodeResolve()],
+  plugins: [vue(), vitePluginMd2Vue(), vitePluginDocs(), vitePluginDocsConfig()],
   resolve: {
     alias: {
       docs: resolve("./docs"),
