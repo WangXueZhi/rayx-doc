@@ -1,6 +1,6 @@
 <template>
   <div class="layout-head">
-    <div class="project-name">RayxDoc - 适合团队使用的轻量文档系统</div>
+    <div class="project-name">RayxDoc - 方便团队快速搭建的轻量文档系统</div>
     <div class="head-right">
       <div class="head-right-search" @click="show">
         <r-icon name="iconicon-test7" class="demo-icon" />
