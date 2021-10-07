@@ -25,5 +25,6 @@
     "vite": "^2.1.0",
     "vite-plugin-md2vue": "^1.1.0",
     "vue-tsc": "^0.0.8"
-  }
+  },
+  "homepage": "https://wangxuezhi.github.io/rayx-doc/"
 }
