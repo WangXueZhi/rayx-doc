@@ -1,0 +1,54 @@
+.r-scrollbar {
+    overflow: hidden;
+    position: relative;
+
+    .r-scrollbar__wrap {
+        height: 100%;
+
+        overflow: scroll;
+        overflow-x: auto;
+    }
+
+    .r-scrollbar__bar {
+        position: absolute;
+        right: 2px;
+        bottom: 0;
+        z-index: 1;
+        border-radius: 4px;
+        opacity: 0;
+        transition: opacity .12s ease-out;
+
+        &.is-horizontal {
+            height: 6px;
+            left: 2px;
+
+            &>div {
+                height: 100%;
+            }
+        }
+
+        &.is-vertical {
+            width: 6px;
+            top: 0;
+
+            &>div {
+                width: 100%;
+            }
+        }
+
+        .r-scrollbar__thumb {
+            position: relative;
+            display: block;
+            border-radius: 4px;
+            background-color: rgba(144, 147, 153, .3);
+            transition: background-color .3s;
+        }
+
+        &.r-scrollbar__bar__show{
+            opacity: 1;
+            .r-scrollbar__thumb {
+                background-color: rgba(144, 147, 153, .5);
+            }
+        }
+    }
+}
