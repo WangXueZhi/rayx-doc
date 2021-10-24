@@ -1,4 +1,4 @@
-import{d as o,y as s}from"./vendor.c168e704.js";const n=o({name:"Markdown"}),e=()=>s("div",{class:["md2vue-wrapper"],innerHTML:`<h1 id="\u5FEB\u901F\u4E0A\u624B">\u5FEB\u901F\u4E0A\u624B</h1><h3 id="\u7B2C\u4E00\u6B65\uFF1A\u514B\u9686\u4ED3\u5E93">\u7B2C\u4E00\u6B65\uFF1A\u514B\u9686\u4ED3\u5E93</h3>
+import{d as o,y as s}from"./vendor.5022afda.js";const n=o({name:"Markdown"}),e=()=>s("div",{class:["md2vue-wrapper"],innerHTML:`<h1 id="\u5FEB\u901F\u4E0A\u624B">\u5FEB\u901F\u4E0A\u624B</h1><h3 id="\u7B2C\u4E00\u6B65\uFF1A\u514B\u9686\u4ED3\u5E93">\u7B2C\u4E00\u6B65\uFF1A\u514B\u9686\u4ED3\u5E93</h3>
         <div class="md-code-hijs">
         <pre><code class="language-bash hljs">git clone https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/WangXueZhi/</span>rayx-doc.git</code></pre>
 
