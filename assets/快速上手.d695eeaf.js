@@ -20,7 +20,24 @@ yarn dev</span></code></pre>
 
     </div>`});n.render=o;n.mounted=()=>{};const r=[{text:"\u5FEB\u901F\u4E0A\u624B",level:1,raw:"\u5FEB\u901F\u4E0A\u624B"},{text:"\u7B2C\u4E00\u6B65\uFF1A\u514B\u9686\u4ED3\u5E93",level:3,raw:"\u7B2C\u4E00\u6B65\uFF1A\u514B\u9686\u4ED3\u5E93"},{text:"\u7B2C\u4E8C\u6B65\uFF1A\u5728docs\u76EE\u5F55\u4E0B\u6DFB\u52A0md\u6587\u4EF6\u5E76\u7F16\u5199\u6587\u6863",level:3,raw:"\u7B2C\u4E8C\u6B65\uFF1A\u5728docs\u76EE\u5F55\u4E0B\u6DFB\u52A0md\u6587\u4EF6\u5E76\u7F16\u5199\u6587\u6863"},{text:"\u7B2C\u4E09\u6B65\uFF1A\u6839\u76EE\u5F55\u4E2D\u7684<code>docs.config.js</code>\u4E2D\u6DFB\u52A0\u9ED8\u8BA4\u9875\u9762",level:3,raw:"\u7B2C\u4E09\u6B65\uFF1A\u6839\u76EE\u5F55\u4E2D\u7684docs.config.js\u4E2D\u6DFB\u52A0\u9ED8\u8BA4\u9875\u9762"},{text:"\u7B2C\u56DB\u6B65\uFF1A\u5B89\u88C5\u4F9D\u8D56\uFF0C\u542F\u52A8\u670D\u52A1",level:3,raw:"\u7B2C\u56DB\u6B65\uFF1A\u5B89\u88C5\u4F9D\u8D56\uFF0C\u542F\u52A8\u670D\u52A1"}],i=[{code:"yum install crontabs",infostring:""},{code:`cd /home/crontab_sh
 vim svn_update.sh`,infostring:""},{code:"#! /bin/sh\necho `svn update /home/svn --username xxxxx --password xxx --no-auth-cache > /home/update-product.log`",infostring:""},{code:"crontab -e",infostring:""},{code:`*/1 * * * * root /root/home/crontab_sh/svn_update.sh
-// \u4E00\u5206\u949F\u6267\u884C\u4E00\u6B21`,infostring:""},{code:"service crond restart",infostring:""},{code:`<html lang="en">
+// \u4E00\u5206\u949F\u6267\u884C\u4E00\u6B21`,infostring:""},{code:"service crond restart",infostring:""},{code:`node_modules
+\u2514\u2500 A1
+   \u251C\u2500 index.js
+   \u251C\u2500 package.json
+   \u2514\u2500 node_modules
+      \u2514\u2500 A2
+         \u251C\u2500 index.js
+         \u2514\u2500 package.json
+      \u2514\u2500 lodash
+         \u251C\u2500 index.js
+         \u2514\u2500 package.json
+\u2514\u2500 B1
+   \u251C\u2500 index.js
+   \u251C\u2500 package.json
+   \u2514\u2500 node_modules
+      \u2514\u2500 lodash
+         \u251C\u2500 index.js
+         \u2514\u2500 package.json`,infostring:""},{code:`<html lang="en">
   <head>
     <title>Vite App</title>
   </head>

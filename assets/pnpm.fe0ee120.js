@@ -1,0 +1,73 @@
+import{d as s,y as e}from"./vendor.5022afda.js";const n=s({name:"Markdown"}),p=()=>e("div",{class:["md2vue-wrapper"],innerHTML:`<h1 id="pnpm \u66F4\u597D\u7684\u5305\u7BA1\u7406\u5668">pnpm \u66F4\u597D\u7684\u5305\u7BA1\u7406\u5668</h1><p><a href="https://pnpm.io/zh/">https://pnpm.io/zh/</a></p>
+<p>\u5B98\u65B9\u63CF\u8FF0\uFF1A\u5FEB\u901F\u7684\uFF0C\u8282\u7701\u78C1\u76D8\u7A7A\u95F4\u7684\u5305\u7BA1\u7406\u5DE5\u5177</p>
+<img src="https://p5.itc.cn/q_70/images03/20210303/ff264a5ec0c7455abfc252c1d5f9d854.png" width="70%">
+
+<h2 id="npm/yarn\u7684\u95EE\u9898">npm/yarn\u7684\u95EE\u9898</h2><h4 id="\u5B89\u88C5\u6B65\u9AA4">\u5B89\u88C5\u6B65\u9AA4</h4><ol>
+<li>\u89E3\u6790\u4F9D\u8D56\u5305\u7684\u7248\u672C\u53F7</li>
+<li>\u4E0B\u8F7D\u5BF9\u5E94\u7248\u672C\u4F9D\u8D56\u7684 tar \u5305\u5230\u672C\u5730\u79BB\u7EBF\u955C\u50CF</li>
+<li>\u5C06\u4F9D\u8D56\u4ECE\u79BB\u7EBF\u955C\u50CF\u89E3\u538B\u5230\u672C\u5730\u7F13\u5B58</li>
+<li>\u5C06\u4F9D\u8D56\u4ECE\u7F13\u5B58\u62F7\u8D1D\u5230\u5F53\u524D\u76EE\u5F55\u7684node_modules\u76EE\u5F55\uFF0C\u8FD9\u91CC\u662F\u4E3B\u8981\u6539\u8FDB\u70B9, pnpm\u91C7\u7528\u8F6F\u786C\u94FE\u7684\u65B9\u5F0F\u51CF\u5C11io\u64CD\u4F5C\uFF0Cyarn PnP\u662F\u4EE3\u7406\u4E86require\uFF0C\u76F4\u63A5\u4ECE\u7F13\u5B58\u4E2D\u53D6\u6A21\u5757</li>
+</ol>
+<h4 id="\u751F\u6210\u7684\u4F9D\u8D56\u76EE\u5F55\u7ED3\u6784">\u751F\u6210\u7684\u4F9D\u8D56\u76EE\u5F55\u7ED3\u6784</h4><p>\u5728 npm1 \u3001 npm2 \u4E2D\u5448\u73B0\u51FA\u7684\u662F\u5982\u4E0B\u7684\u5D4C\u5957\u7ED3\u6784</p>
+
+        <div class="md-code-hijs">
+        <pre><code class="hljs">node_modules
+\u2514\u2500 <span class="hljs-built_in">A1</span>
+   \u251C\u2500 index.<span class="hljs-keyword">js
+</span>   \u251C\u2500 package.<span class="hljs-keyword">json
+</span>   \u2514\u2500 node_modules
+      \u2514\u2500 <span class="hljs-built_in">A2</span>
+         \u251C\u2500 index.<span class="hljs-keyword">js
+</span>         \u2514\u2500 package.<span class="hljs-keyword">json
+</span>      \u2514\u2500 lodash
+         \u251C\u2500 index.<span class="hljs-keyword">js
+</span>         \u2514\u2500 package.<span class="hljs-keyword">json
+</span>\u2514\u2500 <span class="hljs-keyword">B1
+</span>   \u251C\u2500 index.<span class="hljs-keyword">js
+</span>   \u251C\u2500 package.<span class="hljs-keyword">json
+</span>   \u2514\u2500 node_modules
+      \u2514\u2500 lodash
+         \u251C\u2500 index.<span class="hljs-keyword">js
+</span>         \u2514\u2500 package.<span class="hljs-keyword">json</span></code></pre>
+
+    </div><p>\u8FD9\u79CD\u7ED3\u6784\u5E26\u6765\u7684\u95EE\u9898\uFF1A</p>
+<ol>
+<li>\u4F9D\u8D56\u5C42\u7EA7\u592A\u6DF1\uFF0C\u4F1A\u5BFC\u81F4\u6587\u4EF6\u8DEF\u5F84\u8FC7\u957F\u7684\u95EE\u9898\uFF0C\u5C24\u5176\u5728 window \u7CFB\u7EDF\u4E0B\u3002</li>
+<li>\u5927\u91CF\u91CD\u590D\u7684\u5305\u88AB\u5B89\u88C5\uFF0C\u6587\u4EF6\u4F53\u79EF\u8D85\u7EA7\u5927\u3002\u6BD4\u5982\u8DDF A1 \u548C B1 \u4E24\u8005\u90FD\u4F9D\u8D56\u4E8E\u540C\u4E00\u4E2A\u7248\u672C\u7684 lodash \uFF0C\u90A3\u4E48 lodash \u4F1A\u5206\u522B\u5728\u4E24\u8005\u7684 node_modules \u4E2D\u88AB\u5B89\u88C5\uFF0C\u4E5F\u5C31\u662F\u91CD\u590D\u5B89\u88C5\u3002</li>
+<li>\u6A21\u5757\u5B9E\u4F8B\u4E0D\u80FD\u5171\u4EAB\u3002\u6BD4\u5982 React \u6709\u4E00\u4E9B\u5185\u90E8\u53D8\u91CF\uFF0C\u5728\u4E24\u4E2A\u4E0D\u540C\u5305\u5F15\u5165\u7684 React \u4E0D\u662F\u540C\u4E00\u4E2A\u6A21\u5757\u5B9E\u4F8B\uFF0C\u56E0\u6B64\u65E0\u6CD5\u5171\u4EAB\u5185\u90E8\u53D8\u91CF\uFF0C\u5BFC\u81F4\u4E00\u4E9B\u4E0D\u53EF\u9884\u77E5\u7684 bug\u3002</li>
+</ol>
+<p>\u6240\u4EE5\u4ECEnpm3\u5F00\u59CB\uFF0C\u5305\u62EC yarn\u90FD\u5F00\u59CB\u91C7\u7528\u6241\u5E73\u5316\u7684\u4F9D\u8D56\u7ED3\u6784\u6765\u89E3\u51B3\u8FD9\u51E0\u4E2A\u95EE\u9898\u3002\u4F46\u662F\u4F9D\u7136\u5E26\u6765\u65B0\u7684\u95EE\u9898\uFF1A</p>
+<ol>
+<li><p>\u4F9D\u8D56\u7ED3\u6784\u7684 \u4E0D\u786E\u5B9A\u6027, \u53D6\u51B3\u4E8E\u5B89\u88C5\u7684\u5148\u540E\u987A\u5E8F\uFF0C\u8FD9\u4E5F\u662Flock\u6587\u4EF6\u8BDE\u751F\u7684\u539F\u56E0\u3002</p>
+<img src="./npm\u4E0D\u786E\u5B9A\u7ED3\u6784.png" height="400px"></li>
+<li><p>\u6241\u5E73\u5316\u7B97\u6CD5\u672C\u8EAB\u7684 \u590D\u6742\u6027\u5F88\u9AD8\uFF0C\u8017\u65F6\u8F83\u957F\u3002</p>
+</li>
+<li><p>\u4F9D\u8D56\u63D0\u5347\uFF0C\u5BFC\u81F4\u53EF\u4EE5\u975E\u6CD5\u8BBF\u95EE\u6CA1\u6709\u58F0\u660E\u8FC7\u4F9D\u8D56\u7684\u5305, \u6BD4\u5982\u9879\u76EE\u4F9D\u8D56\u4E86A\uFF0CA\u4F9D\u8D56\u4E86B\uFF0C\u800C\u9879\u76EE\u80FD\u76F4\u63A5\u4F7F\u7528\u4F9D\u8D56B\u3002</p>
+</li>
+</ol>
+<h2 id="pnpm\u7684\u6539\u8FDB">pnpm\u7684\u6539\u8FDB</h2><img src="./pnpm\u5B89\u88C5\u7ED3\u6784.png" height="400px">
+
+<h4 id="\u901F\u5EA6 \u548C \u78C1\u76D8\u7A7A\u95F4">\u901F\u5EA6 \u548C \u78C1\u76D8\u7A7A\u95F4</h4><p>\u8F6F\u786C\u94FE+\u4F9D\u8D56\u76EE\u5F55\u7ED3\u6784\u7684\u4F18\u5316\uFF0C\u5728\u5B89\u88C5\u6B65\u9AA4\u7684\u7B2C\u56DB\u6B65\u4E2D\uFF0C\u907F\u514D\u4E86\u5927\u91CF\u7684io\u64CD\u4F5C\uFF0C\u51CF\u5C11\u4E86\u91CD\u590D\u5B89\u88C5\u7684\u65F6\u95F4\u548C\u7A7A\u95F4\u3002</p>
+<h4 id="\u5B89\u5168\u6027">\u5B89\u5168\u6027</h4><p>\u4E0D\u5B58\u5728\u975E\u6CD5\u8BBF\u95EE\u7684\u95EE\u9898\uFF0C\u56E0\u4E3Anode_modules\u4E0B\u53EA\u4F1A\u5B58\u5728\u9879\u76EE\u4F9D\u8D56\u7684\u8F6F\u94FE\u63A5</p>
+<h4 id="monorepo">monorepo</h4><p>\u5BF9monorepo\u7684\u652F\u6301\u66F4\u53CB\u597D\uFF0C\u63D0\u4F9B\u5B50\u547D\u4EE4\u652F\u6301\u64CD\u4F5C\u6240\u6709package\u4F9D\u8D56</p>
+<h2 id="\u6269\u5C55">\u6269\u5C55</h2><p><a href="https://loveky.github.io/2019/02/11/yarn-pnp/">yarn pnp</a></p>
+`});n.render=p;n.mounted=()=>{};const a=[{text:"pnpm \u66F4\u597D\u7684\u5305\u7BA1\u7406\u5668",level:1,raw:"pnpm \u66F4\u597D\u7684\u5305\u7BA1\u7406\u5668"},{text:"npm/yarn\u7684\u95EE\u9898",level:2,raw:"npm/yarn\u7684\u95EE\u9898"},{text:"\u5B89\u88C5\u6B65\u9AA4",level:4,raw:"\u5B89\u88C5\u6B65\u9AA4"},{text:"\u751F\u6210\u7684\u4F9D\u8D56\u76EE\u5F55\u7ED3\u6784",level:4,raw:"\u751F\u6210\u7684\u4F9D\u8D56\u76EE\u5F55\u7ED3\u6784"},{text:"pnpm\u7684\u6539\u8FDB",level:2,raw:"pnpm\u7684\u6539\u8FDB"},{text:"\u901F\u5EA6 \u548C \u78C1\u76D8\u7A7A\u95F4",level:4,raw:"\u901F\u5EA6 \u548C \u78C1\u76D8\u7A7A\u95F4"},{text:"\u5B89\u5168\u6027",level:4,raw:"\u5B89\u5168\u6027"},{text:"monorepo",level:4,raw:"monorepo"},{text:"\u6269\u5C55",level:2,raw:"\u6269\u5C55"}],l=[{code:"yum install crontabs",infostring:""},{code:`cd /home/crontab_sh
+vim svn_update.sh`,infostring:""},{code:"#! /bin/sh\necho `svn update /home/svn --username xxxxx --password xxx --no-auth-cache > /home/update-product.log`",infostring:""},{code:"crontab -e",infostring:""},{code:`*/1 * * * * root /root/home/crontab_sh/svn_update.sh
+// \u4E00\u5206\u949F\u6267\u884C\u4E00\u6B21`,infostring:""},{code:"service crond restart",infostring:""},{code:`node_modules
+\u2514\u2500 A1
+   \u251C\u2500 index.js
+   \u251C\u2500 package.json
+   \u2514\u2500 node_modules
+      \u2514\u2500 A2
+         \u251C\u2500 index.js
+         \u2514\u2500 package.json
+      \u2514\u2500 lodash
+         \u251C\u2500 index.js
+         \u2514\u2500 package.json
+\u2514\u2500 B1
+   \u251C\u2500 index.js
+   \u251C\u2500 package.json
+   \u2514\u2500 node_modules
+      \u2514\u2500 lodash
+         \u251C\u2500 index.js
+         \u2514\u2500 package.json`,infostring:""}];export{l as codeBlocks,n as default,a as headings};

@@ -180,7 +180,24 @@ app.use(<span class="hljs-keyword">async</span> (ctx) =&gt; {
 
     </div>`});s.render=e;s.mounted=()=>{};const l=[{text:"vite",level:1,raw:"vite"},{text:"\u4E3A\u4EC0\u4E48\u5FEB",level:2,raw:"\u4E3A\u4EC0\u4E48\u5FEB"},{text:"\u5DE5\u4F5C\u539F\u7406",level:2,raw:"\u5DE5\u4F5C\u539F\u7406"},{text:"\u4F2A\u4EE3\u7801",level:2,raw:"\u4F2A\u4EE3\u7801"},{text:"\u4F7F\u7528koa\u521B\u5EFA\u5F00\u53D1\u670D\u52A1\u5668",level:4,raw:"\u4F7F\u7528koa\u521B\u5EFA\u5F00\u53D1\u670D\u52A1\u5668"},{text:"\u5904\u7406js\u6587\u4EF6",level:4,raw:"\u5904\u7406js\u6587\u4EF6"},{text:"\u5904\u7406\u7B2C\u4E09\u65B9\u4F9D\u8D56",level:4,raw:"\u5904\u7406\u7B2C\u4E09\u65B9\u4F9D\u8D56"},{text:"vite\u63D2\u4EF6\u5E94\u7528",level:2,raw:"vite\u63D2\u4EF6\u5E94\u7528"},{text:"\u6700\u7B80\u5355\u5E94\u7528\uFF1A\u865A\u62DF\u6A21\u5757",level:4,raw:"\u6700\u7B80\u5355\u5E94\u7528\uFF1A\u865A\u62DF\u6A21\u5757"},{text:"\u590D\u6742\u4E00\u70B9\u7684\u5E94\u7528\uFF1A\u5904\u7406md\u7684loader",level:4,raw:"\u590D\u6742\u4E00\u70B9\u7684\u5E94\u7528\uFF1A\u5904\u7406md\u7684loader"}],p=[{code:"yum install crontabs",infostring:""},{code:`cd /home/crontab_sh
 vim svn_update.sh`,infostring:""},{code:"#! /bin/sh\necho `svn update /home/svn --username xxxxx --password xxx --no-auth-cache > /home/update-product.log`",infostring:""},{code:"crontab -e",infostring:""},{code:`*/1 * * * * root /root/home/crontab_sh/svn_update.sh
-// \u4E00\u5206\u949F\u6267\u884C\u4E00\u6B21`,infostring:""},{code:"service crond restart",infostring:""},{code:`<html lang="en">
+// \u4E00\u5206\u949F\u6267\u884C\u4E00\u6B21`,infostring:""},{code:"service crond restart",infostring:""},{code:`node_modules
+\u2514\u2500 A1
+   \u251C\u2500 index.js
+   \u251C\u2500 package.json
+   \u2514\u2500 node_modules
+      \u2514\u2500 A2
+         \u251C\u2500 index.js
+         \u2514\u2500 package.json
+      \u2514\u2500 lodash
+         \u251C\u2500 index.js
+         \u2514\u2500 package.json
+\u2514\u2500 B1
+   \u251C\u2500 index.js
+   \u251C\u2500 package.json
+   \u2514\u2500 node_modules
+      \u2514\u2500 lodash
+         \u251C\u2500 index.js
+         \u2514\u2500 package.json`,infostring:""},{code:`<html lang="en">
   <head>
     <title>Vite App</title>
   </head>

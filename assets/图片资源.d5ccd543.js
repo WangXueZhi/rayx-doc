@@ -1,27 +1,25 @@
-import{d as e,y as t}from"./vendor.5022afda.js";const n=e({name:"Markdown"}),o=()=>t("div",{class:["md2vue-wrapper"],innerHTML:`<h1 id="require.context">require.context</h1><p>\u904D\u5386\u76EE\u5F55\u8FDB\u884C\u6279\u91CF\u7684\u5F02\u6B65\u5BFC\u5165\uFF0C\u5728\u5927\u91CF\u5BFC\u5165\u7684\u573A\u666F\u4E0B\u7279\u522B\u6709\u7528</p>
-<h3 id="\u53C2\u6570">\u53C2\u6570</h3><ol>
-<li>directory {String} -\u8BFB\u53D6\u6587\u4EF6\u7684\u8DEF\u5F84</li>
-<li>useSubdirectories {Boolean} -\u662F\u5426\u904D\u5386\u6587\u4EF6\u7684\u5B50\u76EE\u5F55</li>
-<li>regExp {RegExp} -\u5339\u914D\u6587\u4EF6\u7684\u6B63\u5219</li>
-</ol>
-<h3 id="return">return</h3><p>\u8FD4\u56DE\u4E00\u4E2A\u51FD\u6570\uFF0C\u51FD\u6570\u67093\u4E2A\u5C5E\u6027</p>
-<ol>
-<li>resolve \u662F\u4E00\u4E2A\u51FD\u6570\uFF0C\u5B83\u8FD4\u56DE\u8BF7\u6C42\u88AB\u89E3\u6790\u540E\u5F97\u5230\u7684\u6A21\u5757 id\u3002</li>
-<li>keys \u662F\u4E00\u4E2A\u51FD\u6570\uFF0C\u5B83\u8FD4\u56DE\u4E00\u4E2A\u6570\u7EC4\uFF0C\u7531\u6240\u6709\u53EF\u80FD\u88AB\u4E0A\u4E0B\u6587\u6A21\u5757\u5904\u7406\u7684\u8BF7\u6C42\u7EC4\u6210\u3002</li>
-<li>id \u662F\u4E0A\u4E0B\u6587\u6A21\u5757\u91CC\u9762\u6240\u5305\u542B\u7684\u6A21\u5757 id. \u5B83\u53EF\u80FD\u5728\u4F60\u4F7F\u7528 module.hot.accept \u7684\u65F6\u5019\u88AB\u7528\u5230</li>
-</ol>
-<p>\u8C03\u7528\u51FD\u6570\u672C\u8EAB\u4F20\u5165\u6A21\u5757\u7684key\u53EF\u83B7\u53D6\u6A21\u5757</p>
-
-        <div class="md-code-hijs">
-        <pre><code class="language-javascript hljs"><span class="hljs-keyword">let</span> contexts = <span class="hljs-built_in">require</span>.context(<span class="hljs-string">&#x27;.&#x27;</span>, <span class="hljs-literal">false</span>, <span class="hljs-regexp">/\\.vue$/</span>)
-contexts.keys().forEach(<span class="hljs-function"><span class="hljs-params">key</span> =&gt;</span> {
-    <span class="hljs-comment">// \u6A21\u5757\u7684\u9ED8\u8BA4\u5BFC\u51FA</span>
-    <span class="hljs-keyword">let</span> moduleExport = contexts(key).default
-})</code></pre>
-
-    </div>`});n.render=o;n.mounted=()=>{};const s=[{text:"require.context",level:1,raw:"require.context"},{text:"\u53C2\u6570",level:3,raw:"\u53C2\u6570"},{text:"return",level:3,raw:"return"}],i=[{code:"yum install crontabs",infostring:""},{code:`cd /home/crontab_sh
+import{d as e,y as t}from"./vendor.5022afda.js";const n=e({name:"Markdown"}),o=()=>t("div",{class:["md2vue-wrapper"],innerHTML:`<h1 id="\u56FE\u7247\u8D44\u6E90">\u56FE\u7247\u8D44\u6E90</h1><p>\u5C06\u56FE\u7247\u8D44\u6E90\u653E\u5728public\u76EE\u5F55\u4E0B\uFF0C\u53EF\u76F4\u63A5\u4F7F\u7528\u76F8\u5BF9\u8DEF\u5F84\u53BB\u5F15\u7528<code>./runoob-logo.png</code>\uFF0C\u5982\u4E0B\u56FE\uFF1A</p>
+<p><img src="./runoob-logo.png" alt="ks"></p>
+`});n.render=o;n.mounted=()=>{};const i=[{text:"\u56FE\u7247\u8D44\u6E90",level:1,raw:"\u56FE\u7247\u8D44\u6E90"}],s=[{code:"yum install crontabs",infostring:""},{code:`cd /home/crontab_sh
 vim svn_update.sh`,infostring:""},{code:"#! /bin/sh\necho `svn update /home/svn --username xxxxx --password xxx --no-auth-cache > /home/update-product.log`",infostring:""},{code:"crontab -e",infostring:""},{code:`*/1 * * * * root /root/home/crontab_sh/svn_update.sh
-// \u4E00\u5206\u949F\u6267\u884C\u4E00\u6B21`,infostring:""},{code:"service crond restart",infostring:""},{code:`<html lang="en">
+// \u4E00\u5206\u949F\u6267\u884C\u4E00\u6B21`,infostring:""},{code:"service crond restart",infostring:""},{code:`node_modules
+\u2514\u2500 A1
+   \u251C\u2500 index.js
+   \u251C\u2500 package.json
+   \u2514\u2500 node_modules
+      \u2514\u2500 A2
+         \u251C\u2500 index.js
+         \u2514\u2500 package.json
+      \u2514\u2500 lodash
+         \u251C\u2500 index.js
+         \u2514\u2500 package.json
+\u2514\u2500 B1
+   \u251C\u2500 index.js
+   \u251C\u2500 package.json
+   \u2514\u2500 node_modules
+      \u2514\u2500 lodash
+         \u251C\u2500 index.js
+         \u2514\u2500 package.json`,infostring:""},{code:`<html lang="en">
   <head>
     <title>Vite App</title>
   </head>
@@ -168,17 +166,4 @@ export default function vitePluginMd2Vue(options?: OptionsObject) {
     Note right of John: Rational thoughts prevail!
     John-->>Alice: Great!
     John->>Bob: How about you?
-    Bob-->>John: Jolly good!`,infostring:"mermaid"},{code:"git clone https://github.com/WangXueZhi/rayx-doc.git",infostring:"bash"},{code:"echo '# Hello docs' > docs/\u5F00\u59CB.md",infostring:"bash"},{code:`module.exports = {
-    // \u9ED8\u8BA4\u9875\u9762\uFF0C\u7528\u4E8E\u5339\u914D / \u8DEF\u5F84
-    defaultPage: '\u5F00\u59CB.md'
-}`,infostring:"js"},{code:`yarn
-yarn dev`,infostring:"bash"},{code:`module.exports = {
-    // \u9875\u9762\u6743\u91CD
-    weight: {
-        '\u6307\u5357/\u5FEB\u901F\u4E0A\u624B': 99999
-    }
-}`,infostring:"js"},{code:`let contexts = require.context('.', false, /\\.vue$/)
-contexts.keys().forEach(key => {
-    // \u6A21\u5757\u7684\u9ED8\u8BA4\u5BFC\u51FA
-    let moduleExport = contexts(key).default
-})`,infostring:"javascript"}];export{i as codeBlocks,n as default,s as headings};
+    Bob-->>John: Jolly good!`,infostring:"mermaid"}];export{s as codeBlocks,n as default,i as headings};

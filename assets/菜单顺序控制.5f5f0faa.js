@@ -9,9 +9,26 @@ import{d as e,y as t}from"./vendor.5022afda.js";const n=e({name:"Markdown"}),o=(
     }
 }</code></pre>
 
-    </div>`});n.render=o;n.mounted=()=>{};const s=[{text:"\u83DC\u5355\u987A\u5E8F\u63A7\u5236",level:1,raw:"\u83DC\u5355\u987A\u5E8F\u63A7\u5236"}],i=[{code:"yum install crontabs",infostring:""},{code:`cd /home/crontab_sh
+    </div>`});n.render=o;n.mounted=()=>{};const r=[{text:"\u83DC\u5355\u987A\u5E8F\u63A7\u5236",level:1,raw:"\u83DC\u5355\u987A\u5E8F\u63A7\u5236"}],i=[{code:"yum install crontabs",infostring:""},{code:`cd /home/crontab_sh
 vim svn_update.sh`,infostring:""},{code:"#! /bin/sh\necho `svn update /home/svn --username xxxxx --password xxx --no-auth-cache > /home/update-product.log`",infostring:""},{code:"crontab -e",infostring:""},{code:`*/1 * * * * root /root/home/crontab_sh/svn_update.sh
-// \u4E00\u5206\u949F\u6267\u884C\u4E00\u6B21`,infostring:""},{code:"service crond restart",infostring:""},{code:`<html lang="en">
+// \u4E00\u5206\u949F\u6267\u884C\u4E00\u6B21`,infostring:""},{code:"service crond restart",infostring:""},{code:`node_modules
+\u2514\u2500 A1
+   \u251C\u2500 index.js
+   \u251C\u2500 package.json
+   \u2514\u2500 node_modules
+      \u2514\u2500 A2
+         \u251C\u2500 index.js
+         \u2514\u2500 package.json
+      \u2514\u2500 lodash
+         \u251C\u2500 index.js
+         \u2514\u2500 package.json
+\u2514\u2500 B1
+   \u251C\u2500 index.js
+   \u251C\u2500 package.json
+   \u2514\u2500 node_modules
+      \u2514\u2500 lodash
+         \u251C\u2500 index.js
+         \u2514\u2500 package.json`,infostring:""},{code:`<html lang="en">
   <head>
     <title>Vite App</title>
   </head>
@@ -167,4 +184,4 @@ yarn dev`,infostring:"bash"},{code:`module.exports = {
     weight: {
         '\u6307\u5357/\u5FEB\u901F\u4E0A\u624B': 99999
     }
-}`,infostring:"js"}];export{i as codeBlocks,n as default,s as headings};
+}`,infostring:"js"}];export{i as codeBlocks,n as default,r as headings};
