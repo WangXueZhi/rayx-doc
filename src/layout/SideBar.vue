@@ -8,7 +8,7 @@
       <div class="layout-menu-item-name layout-menu-item-hasChildren">
         {{ item.title }}
       </div>
-      <layout-menu :menu="item.children" :level="level + 1" />
+      <layout-sideBar :menu="item.children" :level="level + 1" />
     </template>
     <div
       v-else
@@ -30,7 +30,7 @@ import { useRouter } from "vue-router";
 import { Menu } from "@src/types";
 
 export default defineComponent({
-  name: "layout-menu",
+  name: "layout-sideBar",
   props: {
     menu: {
       type: Array,

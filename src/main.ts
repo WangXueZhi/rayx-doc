@@ -38,6 +38,7 @@ interface State {
   activeDocPath: String,
   docsData: Object[],
   showSearch: Boolean,
+  showMenu: Boolean,
   activeRoutPath: string
 }
 
@@ -48,6 +49,7 @@ const store = createStore<State>({
       activeDocPath: '',
       docsData: docs,
       showSearch: false,
+      showMenu: false,
       activeRoutPath: ''
     }
   },
@@ -61,6 +63,9 @@ const store = createStore<State>({
     setActiveRoutPath (state, value) {
       state.activeRoutPath = value
     },
+    setShowMenuState (state, value) {
+      state.showMenu = value
+    }
   }
 })
 

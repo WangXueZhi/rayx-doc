@@ -1,14 +1,17 @@
 <template>
   <div class="layout-content">
-    <router-view></router-view>
-    <r-scroll-bar class="layout-heading-menu" :class="{'layout-heading-menu-moreHeading': state.moreHeading}" v-if="state.headingNav.length > 0">
-      <div class="layout-heading-menu-wrapper">
-        <div v-for="(item, index) in state.headingNav" :key="index" class="layout-heading-menu-item" @click="goHeading(item)">
-          {{item.text}}
-        </div>
+    <div class="layout-content-wrapper">
+      <div class="layout-content-md">
+        <router-view></router-view>
       </div>
-      <!-- <r-icon name="iconicon-test40" class="layout-heading-menu-arrow" :class="{'layout-heading-menu-arrow-moreHeading': state.moreHeading}" @click="switchHeading"/> -->
-    </r-scroll-bar>
+      <r-scroll-bar class="layout-heading-menu" :class="{'layout-heading-menu-moreHeading': state.moreHeading}" v-if="state.headingNav.length > 0">
+        <div class="layout-heading-menu-wrapper">
+          <div v-for="(item, index) in state.headingNav" :key="index" class="layout-heading-menu-item" @click="goHeading(item)">
+            {{item.text}}
+          </div>
+        </div>
+      </r-scroll-bar>
+    </div>
   </div>
 </template>
 
@@ -61,69 +64,64 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .layout-content {
-    margin: 0 13%;
-    padding: 0px 26px;
-    margin-top: 50px;
-    padding-top: 1px;
-    .layout-heading-menu{
-      position: fixed;
-      right: 26px;
-      top: 58px;
-      bottom: 0;
-      width: 230px;
-      padding-left: 20px;
-      padding-top: 20px;
-      transition: all .3s ease 0s;
-      background-color: #fff;
-
-      // &:hover{
-      //   width: 400px;
-      //   .layout-heading-menu-arrow{
-      //     transform: rotate(180deg);
-      //   }
-      // }
-
-      &.layout-heading-menu-moreHeading{
-        width: 350px;
+    .layout-content-wrapper{
+      @apply overflow-y-auto fixed flex lg:left-[calc(13rem+10px)] left-[calc(2rem+5px)] right-0 bottom-0;
+      top: 3.8125rem;
+      .layout-content-md{
+        flex: 1;
+        @apply  md:pr-0 pr-[calc(2rem+5px)];
       }
+      .layout-heading-menu{
+        @apply sticky hidden md:block;
+        top: 0;
+        flex-basis: 13rem;
+        padding-left: 5px;
+        padding-top: 5px;
+        transition: all .3s ease 0s;
+        background-color: #fff;
 
-      .layout-heading-menu-arrow{
-        position: absolute;
-        left: 0;
-        top: 20px;
-        cursor: pointer;
-        transition: transform .3s ease 0s;
-        transform-origin: center;
-        &.layout-heading-menu-arrow-moreHeading{
-          transform: rotate(180deg);
+        &.layout-heading-menu-moreHeading{
+          width: 350px;
         }
-      }
 
-      .layout-heading-menu-wrapper{
-        position: relative;
-        padding-right: 20px;
-        border-left: 1px solid #f0f0f0;
-        padding-left: 20px;
-        // &::before{
-        //   content: '';
-        //   position: absolute;
-        //   left: 0;
-        // }
-
-        .layout-heading-menu-item{
-          margin-bottom: 10px;
-          font-size: 13px;
-          color: #515a6e;
+        .layout-heading-menu-arrow{
+          position: absolute;
+          left: 0;
+          top: 20px;
           cursor: pointer;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          overflow: hidden;
-          &:hover{
-            color: var(--main-color);
+          transition: transform .3s ease 0s;
+          transform-origin: center;
+          &.layout-heading-menu-arrow-moreHeading{
+            transform: rotate(180deg);
+          }
+        }
+
+        .layout-heading-menu-wrapper{
+          position: relative;
+          padding-right: 20px;
+          border-left: 1px solid #f0f0f0;
+          padding-left: 20px;
+          // &::before{
+          //   content: '';
+          //   position: absolute;
+          //   left: 0;
+          // }
+
+          .layout-heading-menu-item{
+            margin-bottom: 10px;
+            font-size: 13px;
+            color: #515a6e;
+            cursor: pointer;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            &:hover{
+              color: var(--main-color);
+            }
           }
         }
       }
-      
     }
+    
 }
 </style>

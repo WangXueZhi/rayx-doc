@@ -1,26 +1,37 @@
-:root{
-    --main-color: #1890ff
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 .md2vue-wrapper {
     // color: #515a6e;
     // display: flex;
     // flex-direction: column;
+    padding: 10px 0;
 
-    // h1 {
-    //     font-weight: 400;
-    //     margin: 12px 0;
-    // }
+    h1 {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+        font-weight: 800;
+        color: rgba(17,24,39,var(--tw-text-opacity));
+    }
 
-    // h2 {
-    //     font-weight: 400;
-    //     margin: 12px 0;
-    // }
+    h2 {
+        color: #111827;
+        font-weight: 700;
+        font-size: 1.5em;
+        margin-top: 2em;
+        margin-bottom: 1em;
+        line-height: 1.3333333;
+    }
 
-    // h3 {
-    //     font-weight: 400;
-    //     margin: 8px 0;
-    // }
+    h3 {
+        font-size: 1.25em;
+        margin-top: 1.6em;
+        margin-bottom: 0.6em;
+        line-height: 1.6;
+        color: #111827;
+        font-weight: 600;
+    }
 
     // h4 {
     //     font-weight: 400;
@@ -123,7 +134,8 @@
 
     pre {
         padding: 0;
-        margin: 0
+        margin: 0;
+        white-space: break-spaces;
     }
 
     code {
@@ -176,4 +188,8 @@
     table td ul li {
         font-size: 12px !important
     }
+  }
+
+:root {
+  --main-color: #1890ff
 }

@@ -138,7 +138,7 @@ export default defineComponent({
   border-radius: 6px;
   box-shadow: inset 1px 1px 0 0 hsla(0, 0%, 100%, 0.5), 0 3px 8px 0 #555a64;
   position: relative;
-  width: 700px;
+  width: 100%;
   height: 400px;
 
   .search-input {
