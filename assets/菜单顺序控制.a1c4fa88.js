@@ -1,25 +1,15 @@
-import{d as e,y as t}from"./vendor.5022afda.js";const n=e({name:"Markdown"}),o=()=>t("div",{class:["md2vue-wrapper"],innerHTML:`<h1 id="require.context">require.context</h1><p>\u904D\u5386\u76EE\u5F55\u8FDB\u884C\u6279\u91CF\u7684\u5F02\u6B65\u5BFC\u5165\uFF0C\u5728\u5927\u91CF\u5BFC\u5165\u7684\u573A\u666F\u4E0B\u7279\u522B\u6709\u7528</p>
-<h3 id="\u53C2\u6570">\u53C2\u6570</h3><ol>
-<li>directory {String} -\u8BFB\u53D6\u6587\u4EF6\u7684\u8DEF\u5F84</li>
-<li>useSubdirectories {Boolean} -\u662F\u5426\u904D\u5386\u6587\u4EF6\u7684\u5B50\u76EE\u5F55</li>
-<li>regExp {RegExp} -\u5339\u914D\u6587\u4EF6\u7684\u6B63\u5219</li>
-</ol>
-<h3 id="return">return</h3><p>\u8FD4\u56DE\u4E00\u4E2A\u51FD\u6570\uFF0C\u51FD\u6570\u67093\u4E2A\u5C5E\u6027</p>
-<ol>
-<li>resolve \u662F\u4E00\u4E2A\u51FD\u6570\uFF0C\u5B83\u8FD4\u56DE\u8BF7\u6C42\u88AB\u89E3\u6790\u540E\u5F97\u5230\u7684\u6A21\u5757 id\u3002</li>
-<li>keys \u662F\u4E00\u4E2A\u51FD\u6570\uFF0C\u5B83\u8FD4\u56DE\u4E00\u4E2A\u6570\u7EC4\uFF0C\u7531\u6240\u6709\u53EF\u80FD\u88AB\u4E0A\u4E0B\u6587\u6A21\u5757\u5904\u7406\u7684\u8BF7\u6C42\u7EC4\u6210\u3002</li>
-<li>id \u662F\u4E0A\u4E0B\u6587\u6A21\u5757\u91CC\u9762\u6240\u5305\u542B\u7684\u6A21\u5757 id. \u5B83\u53EF\u80FD\u5728\u4F60\u4F7F\u7528 module.hot.accept \u7684\u65F6\u5019\u88AB\u7528\u5230</li>
-</ol>
-<p>\u8C03\u7528\u51FD\u6570\u672C\u8EAB\u4F20\u5165\u6A21\u5757\u7684key\u53EF\u83B7\u53D6\u6A21\u5757</p>
+import{d as e,z as t}from"./vendor.50385166.js";const n=e({name:"Markdown"}),o=()=>t("div",{class:["md2vue-wrapper"],innerHTML:`<h1 id="\u83DC\u5355\u987A\u5E8F\u63A7\u5236">\u83DC\u5355\u987A\u5E8F\u63A7\u5236</h1><p>\u56E0\u4E3A\u83DC\u5355\u7684\u9ED8\u8BA4\u987A\u5E8F\u662F\u6839\u636E\u76EE\u5F55\u8BFB\u53D6\u987A\u5E8F\u51B3\u5B9A\u7684\uFF0C\u6240\u4EE5\u5F88\u6709\u53EF\u80FD\u4F1A\u51FA\u73B0\u548C\u9884\u671F\u4E2D\u4E0D\u4E00\u6837\u7684\u987A\u5E8F\u3002</p>
+<p>\u73B0\u5728\u53EF\u4EE5\u5728\u6839\u76EE\u5F55\u589E\u52A0\u914D\u7F6E\u6587\u4EF6<code>docs.config.js</code>\uFF0C\u914D\u7F6E\u9875\u9762\u6743\u91CD\u53EF\u63A7\u5236\u6307\u5B9A\u83DC\u5355\u5728\u540C\u7EA7\u83DC\u5355\u4E2D\u7684\u987A\u5E8F\uFF0C\u6743\u91CD\u8D8A\u9AD8\uFF0C\u987A\u5E8F\u8D8A\u9760\u524D\uFF0C\u4E0D\u8BBE\u7F6E\u9ED8\u8BA4\u4E3A 0</p>
 
         <div class="md-code-hijs">
-        <pre><code class="language-javascript hljs"><span class="hljs-keyword">let</span> contexts = <span class="hljs-built_in">require</span>.context(<span class="hljs-string">&#x27;.&#x27;</span>, <span class="hljs-literal">false</span>, <span class="hljs-regexp">/\\.vue$/</span>)
-contexts.keys().forEach(<span class="hljs-function"><span class="hljs-params">key</span> =&gt;</span> {
-    <span class="hljs-comment">// \u6A21\u5757\u7684\u9ED8\u8BA4\u5BFC\u51FA</span>
-    <span class="hljs-keyword">let</span> moduleExport = contexts(key).default
-})</code></pre>
+        <pre><code class="language-js hljs"><span class="hljs-keyword">module</span>.<span class="hljs-keyword">exports</span> = {
+    <span class="hljs-comment">// \u9875\u9762\u6743\u91CD</span>
+    weight: {
+        <span class="hljs-string">&#x27;\u6307\u5357/\u5FEB\u901F\u4E0A\u624B&#x27;</span>: <span class="hljs-number">99999</span>
+    }
+}</code></pre>
 
-    </div>`});n.render=o;n.mounted=()=>{};const r=[{text:"require.context",level:1,raw:"require.context"},{text:"\u53C2\u6570",level:3,raw:"\u53C2\u6570"},{text:"return",level:3,raw:"return"}],i=[{code:"yum install crontabs",infostring:""},{code:`cd /home/crontab_sh
+    </div>`});n.render=o;n.mounted=()=>{};const r=[{text:"\u83DC\u5355\u987A\u5E8F\u63A7\u5236",level:1,raw:"\u83DC\u5355\u987A\u5E8F\u63A7\u5236"}],i=[{code:"yum install crontabs",infostring:""},{code:`cd /home/crontab_sh
 vim svn_update.sh`,infostring:""},{code:"#! /bin/sh\necho `svn update /home/svn --username xxxxx --password xxx --no-auth-cache > /home/update-product.log`",infostring:""},{code:"crontab -e",infostring:""},{code:`*/1 * * * * root /root/home/crontab_sh/svn_update.sh
 // \u4E00\u5206\u949F\u6267\u884C\u4E00\u6B21`,infostring:""},{code:"service crond restart",infostring:""},{code:`node_modules
 \u2514\u2500 A1
@@ -194,8 +184,4 @@ yarn dev`,infostring:"bash"},{code:`module.exports = {
     weight: {
         '\u6307\u5357/\u5FEB\u901F\u4E0A\u624B': 99999
     }
-}`,infostring:"js"},{code:`let contexts = require.context('.', false, /\\.vue$/)
-contexts.keys().forEach(key => {
-    // \u6A21\u5757\u7684\u9ED8\u8BA4\u5BFC\u51FA
-    let moduleExport = contexts(key).default
-})`,infostring:"javascript"}];export{i as codeBlocks,n as default,r as headings};
+}`,infostring:"js"}];export{i as codeBlocks,n as default,r as headings};

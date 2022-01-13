@@ -1,4 +1,4 @@
-import{d as n,y as a}from"./vendor.5022afda.js";const s=n({name:"Markdown"}),e=()=>a("div",{class:["md2vue-wrapper"],innerHTML:`<center style="margin-top: 40px"><img src="https://vitejs.dev/logo.svg" width="100px"></center>
+import{d as n,z as a}from"./vendor.50385166.js";const s=n({name:"Markdown"}),e=()=>a("div",{class:["md2vue-wrapper"],innerHTML:`<center style="margin-top: 40px"><img src="https://vitejs.dev/logo.svg" width="100px"></center>
 
 <h1 id="vite">vite</h1><p>\u548Cwebpack\u3001Rollup\u3001Parcel\u4E00\u6837\uFF0C\u662F\u4E00\u4E2A\u6253\u5305\u5DE5\u5177\u3002</p>
 <p>\u4F46\u662F\u5B83\u5FEB\uFF01\u5FEB\u4E3B\u8981\u4F53\u73B0\u5728\u5F00\u53D1\u670D\u52A1\u4E0A\uFF0C\u5F00\u53D1\u4F53\u9A8C\u597D\u3002</p>

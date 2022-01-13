@@ -1,15 +1,35 @@
-import{d as e,y as t}from"./vendor.5022afda.js";const n=e({name:"Markdown"}),o=()=>t("div",{class:["md2vue-wrapper"],innerHTML:`<h1 id="\u83DC\u5355\u987A\u5E8F\u63A7\u5236">\u83DC\u5355\u987A\u5E8F\u63A7\u5236</h1><p>\u56E0\u4E3A\u83DC\u5355\u7684\u9ED8\u8BA4\u987A\u5E8F\u662F\u6839\u636E\u76EE\u5F55\u8BFB\u53D6\u987A\u5E8F\u51B3\u5B9A\u7684\uFF0C\u6240\u4EE5\u5F88\u6709\u53EF\u80FD\u4F1A\u51FA\u73B0\u548C\u9884\u671F\u4E2D\u4E0D\u4E00\u6837\u7684\u987A\u5E8F\u3002</p>
-<p>\u73B0\u5728\u53EF\u4EE5\u5728\u6839\u76EE\u5F55\u589E\u52A0\u914D\u7F6E\u6587\u4EF6<code>docs.config.js</code>\uFF0C\u914D\u7F6E\u9875\u9762\u6743\u91CD\u53EF\u63A7\u5236\u6307\u5B9A\u83DC\u5355\u5728\u540C\u7EA7\u83DC\u5355\u4E2D\u7684\u987A\u5E8F\uFF0C\u6743\u91CD\u8D8A\u9AD8\uFF0C\u987A\u5E8F\u8D8A\u9760\u524D\uFF0C\u4E0D\u8BBE\u7F6E\u9ED8\u8BA4\u4E3A 0</p>
+import{_ as d}from"./index.fa3217a8.js";import{d as l,z as c}from"./vendor.50385166.js";const i=l({name:"Markdown"}),p=()=>c("div",{class:["md2vue-wrapper"],innerHTML:`<h1 id="Mermaid">Mermaid</h1><p>Mermaid\u662F\u4E00\u79CD\u7F16\u5199\u7518\u7279\u56FE\u3001\u6D41\u7A0B\u56FE\u3001\u987A\u5E8F\u56FE\u7B49\u5404\u79CD\u56FE\u5F62\u7684\u8BED\u6CD5\u548C\u89E3\u6790\u5E93\uFF0C\u901A\u8FC7\u8FD9\u79CD\u8BED\u6CD5\uFF0C\u6211\u4EEC\u53EF\u4EE5\u76F4\u63A5\u5728markdown\u4E2D\u7F16\u5199\u5404\u79CD\u56FE\u5F62\uFF0C\u63D2\u4EF6\u4F1A\u5BF9mermaid\u505A\u89E3\u6790\u8F93\u51FA\u3002</p>
+<p>\u4E0B\u9762\u5C31\u7B80\u5355\u4F8B\u5B50\uFF0C\u5177\u4F53\u66F4\u591A\u5199\u6CD5\u5C31\u53C2\u8003\u6587\u6863\u5427\uFF0C<a href="https://mermaid-js.github.io/mermaid/#/flowchart">mermaid\u5B98\u65B9\u6587\u6863</a>\u3002</p>
+<h2 id="\u4E3E\u4E2A\u6817\u5B50">\u4E3E\u4E2A\u6817\u5B50</h2><p>\u4EE3\u7801\u957F\u8FD9\u6837</p>
 
         <div class="md-code-hijs">
-        <pre><code class="language-js hljs"><span class="hljs-keyword">module</span>.<span class="hljs-keyword">exports</span> = {
-    <span class="hljs-comment">// \u9875\u9762\u6743\u91CD</span>
-    weight: {
-        <span class="hljs-string">&#x27;\u6307\u5357/\u5FEB\u901F\u4E0A\u624B&#x27;</span>: <span class="hljs-number">99999</span>
-    }
-}</code></pre>
+        <pre><code class="hljs">sequenceDiagram
+    participant Alice
+    participant Bob
+    A<span class="hljs-function"><span class="hljs-title">lice</span>-&gt;</span>&gt;John: Hello John, how are you?
+    <span class="hljs-keyword">loop</span> Healthcheck
+        J<span class="hljs-function"><span class="hljs-title">ohn</span>-&gt;</span>&gt;John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts prevail!
+    J<span class="hljs-function"><span class="hljs-title">ohn</span>--&gt;</span>&gt;Alice: Great!
+    J<span class="hljs-function"><span class="hljs-title">ohn</span>-&gt;</span>&gt;Bob: How about you?
+    B<span class="hljs-function"><span class="hljs-title">ob</span>--&gt;</span>&gt;John: Jolly good!</code></pre>
 
-    </div>`});n.render=o;n.mounted=()=>{};const r=[{text:"\u83DC\u5355\u987A\u5E8F\u63A7\u5236",level:1,raw:"\u83DC\u5355\u987A\u5E8F\u63A7\u5236"}],i=[{code:"yum install crontabs",infostring:""},{code:`cd /home/crontab_sh
+    </div><p>\u6548\u679C\u662F\u8FD9\u6837</p>
+<pre><code class="language-mermaid"><div class='mermaidWrapper' style="position: relative">
+          <div class="mermaid-loading" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); color: rgba(0, 0, 0, 0.54)">loading...</div>
+            <div class='mermaid' style="opacity: 0">sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice->>John: Hello John, how are you?
+    loop Healthcheck
+        John->>John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts prevail!
+    John-->>Alice: Great!
+    John->>Bob: How about you?
+    Bob-->>John: Jolly good!</div>
+        </div></code></pre>`});i.render=p;i.mounted=()=>{const o=function(n,r){n.initialize({theme:"forest"}),r.forEach((e,s)=>{n.render("mermaid"+s,e.innerText,a=>{e.innerHTML=a,e.style.opacity=1,e.parentNode.removeChild(e.parentNode.querySelector(".mermaid-loading"))})})},t=document.querySelectorAll(".mermaid");t&&t.length>0&&(window._mermaidLoaded&&window._mermaidModule?o(window._mermaidModule,t):d(()=>import("./mermaid.esm.min.43973d33.js"),[]).then(n=>{window._mermaidLoaded=!0,window._mermaidModule=n,o(n,t)}))};const h=[{text:"Mermaid",level:1,raw:"Mermaid"},{text:"\u4E3E\u4E2A\u6817\u5B50",level:2,raw:"\u4E3E\u4E2A\u6817\u5B50"}],f=[{code:"yum install crontabs",infostring:""},{code:`cd /home/crontab_sh
 vim svn_update.sh`,infostring:""},{code:"#! /bin/sh\necho `svn update /home/svn --username xxxxx --password xxx --no-auth-cache > /home/update-product.log`",infostring:""},{code:"crontab -e",infostring:""},{code:`*/1 * * * * root /root/home/crontab_sh/svn_update.sh
 // \u4E00\u5206\u949F\u6267\u884C\u4E00\u6B21`,infostring:""},{code:"service crond restart",infostring:""},{code:`node_modules
 \u2514\u2500 A1
@@ -175,13 +195,4 @@ export default function vitePluginMd2Vue(options?: OptionsObject) {
     Note right of John: Rational thoughts prevail!
     John-->>Alice: Great!
     John->>Bob: How about you?
-    Bob-->>John: Jolly good!`,infostring:"mermaid"},{code:"git clone https://github.com/WangXueZhi/rayx-doc.git",infostring:"bash"},{code:"echo '# Hello docs' > docs/\u5F00\u59CB.md",infostring:"bash"},{code:`module.exports = {
-    // \u9ED8\u8BA4\u9875\u9762\uFF0C\u7528\u4E8E\u5339\u914D / \u8DEF\u5F84
-    defaultPage: '\u5F00\u59CB.md'
-}`,infostring:"js"},{code:`yarn
-yarn dev`,infostring:"bash"},{code:`module.exports = {
-    // \u9875\u9762\u6743\u91CD
-    weight: {
-        '\u6307\u5357/\u5FEB\u901F\u4E0A\u624B': 99999
-    }
-}`,infostring:"js"}];export{i as codeBlocks,n as default,r as headings};
+    Bob-->>John: Jolly good!`,infostring:"mermaid"}];export{f as codeBlocks,i as default,h as headings};
