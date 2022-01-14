@@ -98,7 +98,7 @@ export default defineComponent({
     }
 
     .head-right-sidebar{
-      @apply flex md:hidden;
+      @apply flex lg:hidden;
       width: 20px;
       height: 25px;
       margin-left: 0;

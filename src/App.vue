@@ -3,9 +3,12 @@
   <r-modal class="search-overlayer" v-model:show="showSearch" @clickMask="clickSearchModalMask" :bodyOverflow="false">
     <searchModal />
   </r-modal>
-  <r-scroll-bar v-if="showMenu" class="block md:hidden fixed right-0 top-[3.8rem] bottom-0 bg-white shadow-sm">
-    <SideBar :menu="menu"/>
-  </r-scroll-bar>
+  <div v-if="showMenu" class="block lg:hidden fixed z-50 right-0 left-0 top-0 bottom-0 w-full h-full">
+    <div class="relative left-0 top-0 right-0 bottom-0 w-full h-full" @click="closeMenu"></div>
+    <r-scroll-bar class="fixed right-0 top-[3.8rem] bottom-0 bg-white shadow-sm">
+      <SideBar :menu="menu"/>
+    </r-scroll-bar>
+  </div>
 </template>
 
 <script lang="ts">
@@ -28,11 +31,15 @@ export default defineComponent({
     const clickSearchModalMask = function(){
       store.commit('setShowSearchState', false)
     }
+    const closeMenu = function(){
+      store.commit('setShowMenuState', false)
+    }
     return {
       showSearch: computed(() => store.state.showSearch),
       showMenu: computed(() => store.state.showMenu),
       menu: computed(() => store.state.menu),
-      clickSearchModalMask
+      clickSearchModalMask,
+      closeMenu
     }
   }
 })

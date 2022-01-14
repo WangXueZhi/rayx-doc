@@ -44,6 +44,9 @@ export default defineComponent({
   setup: () => {
     const store = useStore();
     const router = useRouter();
+    const closeMenu = function(){
+      store.commit('setShowMenuState', false)
+    }
     return {
       activeRoutPath: computed(() => store.state.activeRoutPath),
       itemClick: (data: Menu) => {
@@ -52,6 +55,7 @@ export default defineComponent({
         }
         if (data.path) {
           router.push(data.path);
+          closeMenu()
         }
       },
     };
