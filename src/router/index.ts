@@ -120,6 +120,7 @@ export default function (modules: Modules, otherRouts?: RouteRecordRaw[]) {
       history: createWebHashHistory(),
       routes,
       scrollBehavior(to, from, savedPosition) {
+        console.log(to.query)
         return {
           el: `#${to.query.p}`,
           top: 70,
