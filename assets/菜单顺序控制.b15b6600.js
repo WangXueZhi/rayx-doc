@@ -1,24 +1,15 @@
-import{d as e,z as t}from"./vendor.50385166.js";const n=e({name:"Markdown"}),o=()=>t("div",{class:["md2vue-wrapper"],innerHTML:`<h1 id="\u5FEB\u901F\u4E0A\u624B">\u5FEB\u901F\u4E0A\u624B</h1><h3 id="\u7B2C\u4E00\u6B65\uFF1A\u514B\u9686\u4ED3\u5E93">\u7B2C\u4E00\u6B65\uFF1A\u514B\u9686\u4ED3\u5E93</h3>
-        <div class="md-code-hijs">
-        <pre><code class="language-bash hljs">git clone https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/WangXueZhi/</span>rayx-doc.git</code></pre>
+import{d as e,z as t}from"./vendor.d045623f.js";const n=e({name:"Markdown"}),o=()=>t("div",{class:["md2vue-wrapper"],innerHTML:`<h1 id="\u83DC\u5355\u987A\u5E8F\u63A7\u5236">\u83DC\u5355\u987A\u5E8F\u63A7\u5236</h1><p>\u56E0\u4E3A\u83DC\u5355\u7684\u9ED8\u8BA4\u987A\u5E8F\u662F\u6839\u636E\u76EE\u5F55\u8BFB\u53D6\u987A\u5E8F\u51B3\u5B9A\u7684\uFF0C\u6240\u4EE5\u5F88\u6709\u53EF\u80FD\u4F1A\u51FA\u73B0\u548C\u9884\u671F\u4E2D\u4E0D\u4E00\u6837\u7684\u987A\u5E8F\u3002</p>
+<p>\u73B0\u5728\u53EF\u4EE5\u5728\u6839\u76EE\u5F55\u589E\u52A0\u914D\u7F6E\u6587\u4EF6<code>docs.config.js</code>\uFF0C\u914D\u7F6E\u9875\u9762\u6743\u91CD\u53EF\u63A7\u5236\u6307\u5B9A\u83DC\u5355\u5728\u540C\u7EA7\u83DC\u5355\u4E2D\u7684\u987A\u5E8F\uFF0C\u6743\u91CD\u8D8A\u9AD8\uFF0C\u987A\u5E8F\u8D8A\u9760\u524D\uFF0C\u4E0D\u8BBE\u7F6E\u9ED8\u8BA4\u4E3A 0</p>
 
-    </div><h3 id="\u7B2C\u4E8C\u6B65\uFF1A\u5728docs\u76EE\u5F55\u4E0B\u6DFB\u52A0md\u6587\u4EF6\u5E76\u7F16\u5199\u6587\u6863">\u7B2C\u4E8C\u6B65\uFF1A\u5728docs\u76EE\u5F55\u4E0B\u6DFB\u52A0md\u6587\u4EF6\u5E76\u7F16\u5199\u6587\u6863</h3>
-        <div class="md-code-hijs">
-        <pre><code class="language-bash hljs"><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;# Hello docs&#x27;</span> &gt; docs/\u5F00\u59CB.md</code></pre>
-
-    </div><h3 id="\u7B2C\u4E09\u6B65\uFF1A\u6839\u76EE\u5F55\u4E2D\u7684<code>docs.config.js</code>\u4E2D\u6DFB\u52A0\u9ED8\u8BA4\u9875\u9762">\u7B2C\u4E09\u6B65\uFF1A\u6839\u76EE\u5F55\u4E2D\u7684docs.config.js\u4E2D\u6DFB\u52A0\u9ED8\u8BA4\u9875\u9762</h3>
         <div class="md-code-hijs">
         <pre><code class="language-js hljs"><span class="hljs-keyword">module</span>.<span class="hljs-keyword">exports</span> = {
-    <span class="hljs-comment">// \u9ED8\u8BA4\u9875\u9762\uFF0C\u7528\u4E8E\u5339\u914D / \u8DEF\u5F84</span>
-    defaultPage: <span class="hljs-string">&#x27;\u5F00\u59CB.md&#x27;</span>
+    <span class="hljs-comment">// \u9875\u9762\u6743\u91CD</span>
+    weight: {
+        <span class="hljs-string">&#x27;\u6307\u5357/\u5FEB\u901F\u4E0A\u624B&#x27;</span>: <span class="hljs-number">99999</span>
+    }
 }</code></pre>
 
-    </div><h3 id="\u7B2C\u56DB\u6B65\uFF1A\u5B89\u88C5\u4F9D\u8D56\uFF0C\u542F\u52A8\u670D\u52A1">\u7B2C\u56DB\u6B65\uFF1A\u5B89\u88C5\u4F9D\u8D56\uFF0C\u542F\u52A8\u670D\u52A1</h3>
-        <div class="md-code-hijs">
-        <pre><code class="language-bash hljs"><span class="hljs-attribute">yarn
-yarn dev</span></code></pre>
-
-    </div>`});n.render=o;n.mounted=()=>{};const r=[{text:"\u5FEB\u901F\u4E0A\u624B",level:1,raw:"\u5FEB\u901F\u4E0A\u624B"},{text:"\u7B2C\u4E00\u6B65\uFF1A\u514B\u9686\u4ED3\u5E93",level:3,raw:"\u7B2C\u4E00\u6B65\uFF1A\u514B\u9686\u4ED3\u5E93"},{text:"\u7B2C\u4E8C\u6B65\uFF1A\u5728docs\u76EE\u5F55\u4E0B\u6DFB\u52A0md\u6587\u4EF6\u5E76\u7F16\u5199\u6587\u6863",level:3,raw:"\u7B2C\u4E8C\u6B65\uFF1A\u5728docs\u76EE\u5F55\u4E0B\u6DFB\u52A0md\u6587\u4EF6\u5E76\u7F16\u5199\u6587\u6863"},{text:"\u7B2C\u4E09\u6B65\uFF1A\u6839\u76EE\u5F55\u4E2D\u7684<code>docs.config.js</code>\u4E2D\u6DFB\u52A0\u9ED8\u8BA4\u9875\u9762",level:3,raw:"\u7B2C\u4E09\u6B65\uFF1A\u6839\u76EE\u5F55\u4E2D\u7684docs.config.js\u4E2D\u6DFB\u52A0\u9ED8\u8BA4\u9875\u9762"},{text:"\u7B2C\u56DB\u6B65\uFF1A\u5B89\u88C5\u4F9D\u8D56\uFF0C\u542F\u52A8\u670D\u52A1",level:3,raw:"\u7B2C\u56DB\u6B65\uFF1A\u5B89\u88C5\u4F9D\u8D56\uFF0C\u542F\u52A8\u670D\u52A1"}],i=[{code:"yum install crontabs",infostring:""},{code:`cd /home/crontab_sh
+    </div>`});n.render=o;n.mounted=()=>{};const r=[{text:"\u83DC\u5355\u987A\u5E8F\u63A7\u5236",level:1,raw:"\u83DC\u5355\u987A\u5E8F\u63A7\u5236"}],i=[{code:"yum install crontabs",infostring:""},{code:`cd /home/crontab_sh
 vim svn_update.sh`,infostring:""},{code:"#! /bin/sh\necho `svn update /home/svn --username xxxxx --password xxx --no-auth-cache > /home/update-product.log`",infostring:""},{code:"crontab -e",infostring:""},{code:`*/1 * * * * root /root/home/crontab_sh/svn_update.sh
 // \u4E00\u5206\u949F\u6267\u884C\u4E00\u6B21`,infostring:""},{code:"service crond restart",infostring:""},{code:`node_modules
 \u2514\u2500 A1
@@ -188,4 +179,9 @@ export default function vitePluginMd2Vue(options?: OptionsObject) {
     // \u9ED8\u8BA4\u9875\u9762\uFF0C\u7528\u4E8E\u5339\u914D / \u8DEF\u5F84
     defaultPage: '\u5F00\u59CB.md'
 }`,infostring:"js"},{code:`yarn
-yarn dev`,infostring:"bash"}];export{i as codeBlocks,n as default,r as headings};
+yarn dev`,infostring:"bash"},{code:`module.exports = {
+    // \u9875\u9762\u6743\u91CD
+    weight: {
+        '\u6307\u5357/\u5FEB\u901F\u4E0A\u624B': 99999
+    }
+}`,infostring:"js"}];export{i as codeBlocks,n as default,r as headings};

@@ -1,4 +1,4 @@
-import{d as n,z as e}from"./vendor.50385166.js";const s=n({name:"Markdown"}),o=()=>e("div",{class:["md2vue-wrapper"],innerHTML:`<h1 id="\u5B9A\u65F6\u66F4\u65B0svn">\u5B9A\u65F6\u66F4\u65B0svn</h1><h2 id="\u5B89\u88C5crontab">\u5B89\u88C5crontab</h2>
+import{d as n,z as e}from"./vendor.d045623f.js";const s=n({name:"Markdown"}),o=()=>e("div",{class:["md2vue-wrapper"],innerHTML:`<h1 id="\u5B9A\u65F6\u66F4\u65B0svn">\u5B9A\u65F6\u66F4\u65B0svn</h1><h2 id="\u5B89\u88C5crontab">\u5B89\u88C5crontab</h2>
         <div class="md-code-hijs">
         <pre><code class="hljs">yum <span class="hljs-keyword">install</span> crontabs</code></pre>
 

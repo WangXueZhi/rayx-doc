@@ -1,4 +1,4 @@
-import{d as s,z as e}from"./vendor.50385166.js";const n=s({name:"Markdown"}),p=()=>e("div",{class:["md2vue-wrapper"],innerHTML:`<h1 id="pnpm \u66F4\u597D\u7684\u5305\u7BA1\u7406\u5668">pnpm \u66F4\u597D\u7684\u5305\u7BA1\u7406\u5668</h1><p><a href="https://pnpm.io/zh/">https://pnpm.io/zh/</a></p>
+import{d as s,z as e}from"./vendor.d045623f.js";const n=s({name:"Markdown"}),p=()=>e("div",{class:["md2vue-wrapper"],innerHTML:`<h1 id="pnpm \u66F4\u597D\u7684\u5305\u7BA1\u7406\u5668">pnpm \u66F4\u597D\u7684\u5305\u7BA1\u7406\u5668</h1><p><a href="https://pnpm.io/zh/">https://pnpm.io/zh/</a></p>
 <p>\u5B98\u65B9\u63CF\u8FF0\uFF1A\u5FEB\u901F\u7684\uFF0C\u8282\u7701\u78C1\u76D8\u7A7A\u95F4\u7684\u5305\u7BA1\u7406\u5DE5\u5177</p>
 <img src="https://p5.itc.cn/q_70/images03/20210303/ff264a5ec0c7455abfc252c1d5f9d854.png" width="70%">
 

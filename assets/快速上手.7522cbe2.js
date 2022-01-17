@@ -1,25 +1,24 @@
-import{d as e,z as t}from"./vendor.50385166.js";const n=e({name:"Markdown"}),o=()=>t("div",{class:["md2vue-wrapper"],innerHTML:`<h1 id="require.context">require.context</h1><p>\u904D\u5386\u76EE\u5F55\u8FDB\u884C\u6279\u91CF\u7684\u5F02\u6B65\u5BFC\u5165\uFF0C\u5728\u5927\u91CF\u5BFC\u5165\u7684\u573A\u666F\u4E0B\u7279\u522B\u6709\u7528</p>
-<h3 id="\u53C2\u6570">\u53C2\u6570</h3><ol>
-<li>directory {String} -\u8BFB\u53D6\u6587\u4EF6\u7684\u8DEF\u5F84</li>
-<li>useSubdirectories {Boolean} -\u662F\u5426\u904D\u5386\u6587\u4EF6\u7684\u5B50\u76EE\u5F55</li>
-<li>regExp {RegExp} -\u5339\u914D\u6587\u4EF6\u7684\u6B63\u5219</li>
-</ol>
-<h3 id="return">return</h3><p>\u8FD4\u56DE\u4E00\u4E2A\u51FD\u6570\uFF0C\u51FD\u6570\u67093\u4E2A\u5C5E\u6027</p>
-<ol>
-<li>resolve \u662F\u4E00\u4E2A\u51FD\u6570\uFF0C\u5B83\u8FD4\u56DE\u8BF7\u6C42\u88AB\u89E3\u6790\u540E\u5F97\u5230\u7684\u6A21\u5757 id\u3002</li>
-<li>keys \u662F\u4E00\u4E2A\u51FD\u6570\uFF0C\u5B83\u8FD4\u56DE\u4E00\u4E2A\u6570\u7EC4\uFF0C\u7531\u6240\u6709\u53EF\u80FD\u88AB\u4E0A\u4E0B\u6587\u6A21\u5757\u5904\u7406\u7684\u8BF7\u6C42\u7EC4\u6210\u3002</li>
-<li>id \u662F\u4E0A\u4E0B\u6587\u6A21\u5757\u91CC\u9762\u6240\u5305\u542B\u7684\u6A21\u5757 id. \u5B83\u53EF\u80FD\u5728\u4F60\u4F7F\u7528 module.hot.accept \u7684\u65F6\u5019\u88AB\u7528\u5230</li>
-</ol>
-<p>\u8C03\u7528\u51FD\u6570\u672C\u8EAB\u4F20\u5165\u6A21\u5757\u7684key\u53EF\u83B7\u53D6\u6A21\u5757</p>
-
+import{d as e,z as t}from"./vendor.d045623f.js";const n=e({name:"Markdown"}),o=()=>t("div",{class:["md2vue-wrapper"],innerHTML:`<h1 id="\u5FEB\u901F\u4E0A\u624B">\u5FEB\u901F\u4E0A\u624B</h1><h3 id="\u7B2C\u4E00\u6B65\uFF1A\u514B\u9686\u4ED3\u5E93">\u7B2C\u4E00\u6B65\uFF1A\u514B\u9686\u4ED3\u5E93</h3>
         <div class="md-code-hijs">
-        <pre><code class="language-javascript hljs"><span class="hljs-keyword">let</span> contexts = <span class="hljs-built_in">require</span>.context(<span class="hljs-string">&#x27;.&#x27;</span>, <span class="hljs-literal">false</span>, <span class="hljs-regexp">/\\.vue$/</span>)
-contexts.keys().forEach(<span class="hljs-function"><span class="hljs-params">key</span> =&gt;</span> {
-    <span class="hljs-comment">// \u6A21\u5757\u7684\u9ED8\u8BA4\u5BFC\u51FA</span>
-    <span class="hljs-keyword">let</span> moduleExport = contexts(key).default
-})</code></pre>
+        <pre><code class="language-bash hljs">git clone https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/WangXueZhi/</span>rayx-doc.git</code></pre>
 
-    </div>`});n.render=o;n.mounted=()=>{};const i=[{text:"require.context",level:1,raw:"require.context"},{text:"\u53C2\u6570",level:3,raw:"\u53C2\u6570"},{text:"return",level:3,raw:"return"}],s=[{code:"yum install crontabs",infostring:""},{code:`cd /home/crontab_sh
+    </div><h3 id="\u7B2C\u4E8C\u6B65\uFF1A\u5728docs\u76EE\u5F55\u4E0B\u6DFB\u52A0md\u6587\u4EF6\u5E76\u7F16\u5199\u6587\u6863">\u7B2C\u4E8C\u6B65\uFF1A\u5728docs\u76EE\u5F55\u4E0B\u6DFB\u52A0md\u6587\u4EF6\u5E76\u7F16\u5199\u6587\u6863</h3>
+        <div class="md-code-hijs">
+        <pre><code class="language-bash hljs"><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;# Hello docs&#x27;</span> &gt; docs/\u5F00\u59CB.md</code></pre>
+
+    </div><h3 id="\u7B2C\u4E09\u6B65\uFF1A\u6839\u76EE\u5F55\u4E2D\u7684<code>docs.config.js</code>\u4E2D\u6DFB\u52A0\u9ED8\u8BA4\u9875\u9762">\u7B2C\u4E09\u6B65\uFF1A\u6839\u76EE\u5F55\u4E2D\u7684docs.config.js\u4E2D\u6DFB\u52A0\u9ED8\u8BA4\u9875\u9762</h3>
+        <div class="md-code-hijs">
+        <pre><code class="language-js hljs"><span class="hljs-keyword">module</span>.<span class="hljs-keyword">exports</span> = {
+    <span class="hljs-comment">// \u9ED8\u8BA4\u9875\u9762\uFF0C\u7528\u4E8E\u5339\u914D / \u8DEF\u5F84</span>
+    defaultPage: <span class="hljs-string">&#x27;\u5F00\u59CB.md&#x27;</span>
+}</code></pre>
+
+    </div><h3 id="\u7B2C\u56DB\u6B65\uFF1A\u5B89\u88C5\u4F9D\u8D56\uFF0C\u542F\u52A8\u670D\u52A1">\u7B2C\u56DB\u6B65\uFF1A\u5B89\u88C5\u4F9D\u8D56\uFF0C\u542F\u52A8\u670D\u52A1</h3>
+        <div class="md-code-hijs">
+        <pre><code class="language-bash hljs"><span class="hljs-attribute">yarn
+yarn dev</span></code></pre>
+
+    </div>`});n.render=o;n.mounted=()=>{};const r=[{text:"\u5FEB\u901F\u4E0A\u624B",level:1,raw:"\u5FEB\u901F\u4E0A\u624B"},{text:"\u7B2C\u4E00\u6B65\uFF1A\u514B\u9686\u4ED3\u5E93",level:3,raw:"\u7B2C\u4E00\u6B65\uFF1A\u514B\u9686\u4ED3\u5E93"},{text:"\u7B2C\u4E8C\u6B65\uFF1A\u5728docs\u76EE\u5F55\u4E0B\u6DFB\u52A0md\u6587\u4EF6\u5E76\u7F16\u5199\u6587\u6863",level:3,raw:"\u7B2C\u4E8C\u6B65\uFF1A\u5728docs\u76EE\u5F55\u4E0B\u6DFB\u52A0md\u6587\u4EF6\u5E76\u7F16\u5199\u6587\u6863"},{text:"\u7B2C\u4E09\u6B65\uFF1A\u6839\u76EE\u5F55\u4E2D\u7684<code>docs.config.js</code>\u4E2D\u6DFB\u52A0\u9ED8\u8BA4\u9875\u9762",level:3,raw:"\u7B2C\u4E09\u6B65\uFF1A\u6839\u76EE\u5F55\u4E2D\u7684docs.config.js\u4E2D\u6DFB\u52A0\u9ED8\u8BA4\u9875\u9762"},{text:"\u7B2C\u56DB\u6B65\uFF1A\u5B89\u88C5\u4F9D\u8D56\uFF0C\u542F\u52A8\u670D\u52A1",level:3,raw:"\u7B2C\u56DB\u6B65\uFF1A\u5B89\u88C5\u4F9D\u8D56\uFF0C\u542F\u52A8\u670D\u52A1"}],i=[{code:"yum install crontabs",infostring:""},{code:`cd /home/crontab_sh
 vim svn_update.sh`,infostring:""},{code:"#! /bin/sh\necho `svn update /home/svn --username xxxxx --password xxx --no-auth-cache > /home/update-product.log`",infostring:""},{code:"crontab -e",infostring:""},{code:`*/1 * * * * root /root/home/crontab_sh/svn_update.sh
 // \u4E00\u5206\u949F\u6267\u884C\u4E00\u6B21`,infostring:""},{code:"service crond restart",infostring:""},{code:`node_modules
 \u2514\u2500 A1
@@ -189,75 +188,4 @@ export default function vitePluginMd2Vue(options?: OptionsObject) {
     // \u9ED8\u8BA4\u9875\u9762\uFF0C\u7528\u4E8E\u5339\u914D / \u8DEF\u5F84
     defaultPage: '\u5F00\u59CB.md'
 }`,infostring:"js"},{code:`yarn
-yarn dev`,infostring:"bash"},{code:`module.exports = {
-    // \u9875\u9762\u6743\u91CD
-    weight: {
-        '\u6307\u5357/\u5FEB\u901F\u4E0A\u624B': 99999
-    }
-}`,infostring:"js"},{code:`function fib(n) {
-  if (n === 0) return 0
-  if (n === 1 || n === 2) return 1
-
-  return fib(n - 1) + fib(n - 2)
-}`,infostring:"javascript"},{code:`function fib(n) {
-  if (n === 0) return 0;
-
-  const memoArr = []
-
-  return helper(memoArr, n)
-
-}
-
-function helper(memoArr, n) {
-  if (n === 1 || n === 2) return 1
-  if (!memoArr[n]) {
-    memoArr[n] = helper(memoArr, n - 1) + helper(memoArr, n - 2)
-  }
-  return memoArr[n]
-}`,infostring:"javascript"},{code:`function fib(n) {
-  if (n === 0) return 0
-  let dp = new Array(n+1).fill(0)
-  dp[1] = 1
-  dp[2] = 1
-  for (let i = 3; i < dp.length; i++) {
-    dp[i] = dp[i - 1] + dp[i - 2]
-  }
-  return dp[n]
-}`,infostring:"javascript"},{code:`function fib(n) {
-  if (n === 0) return 0
-  let prev = 1
-  let cur = 1
-
-  for (let i = 3; i <= n; i ++) {
-    let sum = prev + cur
-    prev = cur
-    cur = sum
-  }
-
-  return cur
-}`,infostring:"javascript"},{code:`\u8F93\u5165\uFF1Acoins = [1, 2, 5], amount = 11
-\u8F93\u51FA\uFF1A3 
-\u89E3\u91CA\uFF1A11 = 5 + 5 + 1`,infostring:""},{code:`\u8F93\u5165\uFF1Acoins = [2], amount = 3
-\u8F93\u51FA\uFF1A-1`,infostring:""},{code:`/**
- * @param {number[]} coins
- * @param {number} amount
- * @return {number}
- */
-var coinChange = function(coins, amount) {
-    let dp = new Array(amount + 1).fill(amount + 1)
-
-    dp[0] = 0 
-
-    for (let i = 0; i < dp.length; i ++) {
-        for (coin of coins) {
-            if (i - coin < 0) {continue}
-            dp[i] = Math.min(dp[i], dp[i - coin] + 1)
-        }
-    }
-
-    return (dp[amount] === amount + 1) ? -1 : dp[amount]
-};`,infostring:"javascript"},{code:`let contexts = require.context('.', false, /\\.vue$/)
-contexts.keys().forEach(key => {
-    // \u6A21\u5757\u7684\u9ED8\u8BA4\u5BFC\u51FA
-    let moduleExport = contexts(key).default
-})`,infostring:"javascript"}];export{s as codeBlocks,n as default,i as headings};
+yarn dev`,infostring:"bash"}];export{i as codeBlocks,n as default,r as headings};
