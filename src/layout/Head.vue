@@ -52,7 +52,7 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .layout-head {
-  @apply sticky z-50 w-full;
+  @apply fixed z-50 w-full;
   top: 0;
   left: 0;
   border-bottom: 1px solid #f0f0f0;

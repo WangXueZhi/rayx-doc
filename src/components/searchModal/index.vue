@@ -28,7 +28,7 @@
               v-else
               class="search-scroll-item"
               @click="
-                goPage(`${item.data.url.slice(1)}`, `?p=${item.matchContent}`)
+                goPage(`${item.data.url.slice(1)}`, item.matchContent)
               "
             >
               <div class="search-scroll-item-left">#</div>
@@ -81,8 +81,8 @@ export default defineComponent({
       searchRes: [],
     })
 
-    const goPage = function (path: string, query: string) {
-      router.push(fixRouterPath(path) + (query || ''))
+    const goPage = function (path: string, id: string) {
+      router.push(fixRouterPath(path) + (id ? `/${encodeURIComponent(id)}`: ''))
       store.commit('setShowSearchState', false)
     }
 

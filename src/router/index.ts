@@ -76,14 +76,15 @@ export default function (modules: Modules, otherRouts?: RouteRecordRaw[]) {
       redirect: fixRouterPath(`../docs/${docsConfig.defaultPage}`),
     }
   ];
-
+  console.log(modules)
   for (const path in modules) {
     const menuPathArr = createMenu(fixRouterPath(path, false));
     routes.push({
-      path: fixRouterPath(path),
+      path: fixRouterPath(path)+'/:id?',
       component: ()=>{
         return new Promise((resolve, reject)=>{
           modules[path]().then(res=>{
+            console.log(res)
             resolve(res.default)
             const getSessionItem = sessionStorage.getItem('md-heading-map')
             const mdHeadingMap: any = getSessionItem? JSON.parse(getSessionItem) : {}
@@ -114,16 +115,15 @@ export default function (modules: Modules, otherRouts?: RouteRecordRaw[]) {
   }
   
   deepSort(menu)
-
   return {
     Router: createRouter({
       history: createWebHashHistory(),
       routes,
       scrollBehavior(to, from, savedPosition) {
-        console.log(to.query)
         return {
-          el: `#${to.query.p}`,
+          el: `#${to.params.id}`,
           top: 70,
+          behavior: 'smooth',
         }
       }
     }),
