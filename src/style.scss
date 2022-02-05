@@ -3,192 +3,192 @@
 @tailwind utilities;
 
 .md2vue-wrapper {
-    // color: #515a6e;
-    // display: flex;
-    // flex-direction: column;
-    padding: 10px 0;
+// color: #515a6e;
+// display: flex;
+// flex-direction: column;
+padding: 10px 0;
 
-    h1 {
-        font-size: 1.875rem;
-        line-height: 2.25rem;
-        font-weight: 800;
-        color: rgba(17,24,39,var(--tw-text-opacity));
+h1 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 800;
+    color: rgba(17,24,39,var(--tw-text-opacity));
+}
+
+h2 {
+    color: #111827;
+    font-weight: 700;
+    font-size: 1.5em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    line-height: 1.3333333;
+}
+
+h3 {
+    font-size: 1.25em;
+    margin-top: 1.6em;
+    margin-bottom: 0.6em;
+    line-height: 1.6;
+    color: #111827;
+    font-weight: 600;
+}
+
+// h4 {
+//     font-weight: 400;
+//     margin: 8px 0;
+// }
+
+// p {
+//     font-size: 14px;
+//     margin: 6px 0;
+// }
+
+// ol{
+//     padding-left: 16px;
+// }
+
+.hljs {
+    line-height: 1.8;
+    font-family: Menlo, Monaco, Consolas, Courier, monospace;
+    font-size: 12px;
+    padding: 18px 24px;
+    background-color: #fafafa;
+    border: 1px solid #eaeefb;
+    border-radius: 4px;
+    -webkit-font-smoothing: auto;
+
+    &:before {
+        content: none
     }
+}
 
-    h2 {
-        color: #111827;
-        font-weight: 700;
-        font-size: 1.5em;
-        margin-top: 2em;
-        margin-bottom: 1em;
-        line-height: 1.3333333;
-    }
+.hljs {
+    display: block;
+    overflow-x: auto;
+    color: #525252;
+    padding: 15px;
+    -webkit-text-size-adjust: none
+}
 
-    h3 {
-        font-size: 1.25em;
-        margin-top: 1.6em;
-        margin-bottom: 0.6em;
-        line-height: 1.6;
-        color: #111827;
-        font-weight: 600;
-    }
+.hljs-doctype {
+    color: #999
+}
 
-    // h4 {
-    //     font-weight: 400;
-    //     margin: 8px 0;
-    // }
+.hljs-tag {
+    color: #3e76f6
+}
 
-    // p {
-    //     font-size: 14px;
-    //     margin: 6px 0;
-    // }
+.hljs-attribute {
+    color: #e96900
+}
 
-    // ol{
-    //     padding-left: 16px;
-    // }
+.hljs-value {
+    color: #42b983
+}
 
-    .hljs {
-        line-height: 1.8;
-        font-family: Menlo, Monaco, Consolas, Courier, monospace;
-        font-size: 12px;
-        padding: 18px 24px;
-        background-color: #fafafa;
-        border: 1px solid #eaeefb;
-        border-radius: 4px;
-        -webkit-font-smoothing: auto;
+.hljs-keyword {
+    color: #e96900
+}
 
-        &:before {
-            content: none
-        }
-    }
+.hljs-string {
+    color: #42b983
+}
 
-    .hljs {
-        display: block;
-        overflow-x: auto;
-        color: #525252;
-        padding: 15px;
-        -webkit-text-size-adjust: none
-    }
+.hljs-comment {
+    color: #b3b3b3
+}
 
-    .hljs-doctype {
-        color: #999
-    }
+.hljs-operator .hljs-comment {
+    color: #525252
+}
 
-    .hljs-tag {
-        color: #3e76f6
-    }
+.hljs-regexp {
+    color: #af7dff
+}
 
-    .hljs-attribute {
-        color: #e96900
-    }
+.hljs-built_in {
+    color: #2db7f5
+}
 
-    .hljs-value {
-        color: #42b983
-    }
+.css .hljs-class {
+    color: #e96900
+}
 
-    .hljs-keyword {
-        color: #e96900
-    }
+.css .hljs-number,
+.javascript .hljs-number {
+    color: #fc1e70
+}
 
-    .hljs-string {
-        color: #42b983
-    }
+.css .hljs-attribute {
+    color: #af7dff
+}
 
-    .hljs-comment {
-        color: #b3b3b3
-    }
+.css .hljs-important {
+    color: red
+}
 
-    .hljs-operator .hljs-comment {
-        color: #525252
-    }
+.actionscript .hljs-literal,
+.javascript .hljs-literal {
+    color: #fc1e70
+}
 
-    .hljs-regexp {
-        color: #af7dff
-    }
+pre {
+    padding: 0;
+    margin: 0;
+    white-space: break-spaces;
+}
 
-    .hljs-built_in {
-        color: #2db7f5
-    }
+code {
+    padding: .2em .4em;
+    margin: 0;
+    font-size: 85%;
+    background-color: #fff5f5;
+    border-radius: 3px;
+    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+    color: #fa795e
+}
 
-    .css .hljs-class {
-        color: #e96900
-    }
+pre code {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent
+}
 
-    .css .hljs-number,
-    .javascript .hljs-number {
-        color: #fc1e70
-    }
+pre code {
+    background: #f7f7f7
+}
 
-    .css .hljs-attribute {
-        color: #af7dff
-    }
+table {
+    font-family: Consolas, Menlo, Courier, monospace;
+    font-size: 12px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    border: 1px solid #e9e9e9;
+    width: 100%;
+    margin-bottom: 24px
+}
 
-    .css .hljs-important {
-        color: red
-    }
+table th {
+    background: #f7f7f7;
+    white-space: nowrap;
+    color: #5c6b77;
+    font-weight: 600
+}
 
-    .actionscript .hljs-literal,
-    .javascript .hljs-literal {
-        color: #fc1e70
-    }
+table td,
+table th {
+    border: 1px solid #e9e9e9;
+    padding: 8px 16px;
+    text-align: left
+}
 
-    pre {
-        padding: 0;
-        margin: 0;
-        white-space: break-spaces;
-    }
-
-    code {
-        padding: .2em .4em;
-        margin: 0;
-        font-size: 85%;
-        background-color: #fff5f5;
-        border-radius: 3px;
-        font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
-        color: #fa795e
-    }
-
-    pre code {
-        display: inline;
-        margin: 0;
-        padding: 0;
-        border: none;
-        background: transparent
-    }
-
-    pre code {
-        background: #f7f7f7
-    }
-
-    table {
-        font-family: Consolas, Menlo, Courier, monospace;
-        font-size: 12px;
-        border-collapse: collapse;
-        border-spacing: 0;
-        empty-cells: show;
-        border: 1px solid #e9e9e9;
-        width: 100%;
-        margin-bottom: 24px
-    }
-
-    table th {
-        background: #f7f7f7;
-        white-space: nowrap;
-        color: #5c6b77;
-        font-weight: 600
-    }
-
-    table td,
-    table th {
-        border: 1px solid #e9e9e9;
-        padding: 8px 16px;
-        text-align: left
-    }
-
-    table td ul li {
-        font-size: 12px !important
-    }
-  }
+table td ul li {
+    font-size: 12px !important
+}
+}
 
 :root {
   --main-color: #1890ff
